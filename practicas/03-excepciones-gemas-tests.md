@@ -186,7 +186,7 @@ tenga sentido probar y hacer que cada test sea simple y pruebe una sola cosa.
     - http://www.martinfowler.com/articles/injection.html
 
 1. Si aún no lo hizo descubra las características de Ruby a través de tests
-    de casos extremos con [Ruby Koans](http://koans.herokuapp.com/en).
+    de casos extremos con [Ruby Koans](http://rubykoans.com/).
 
 1. Warlock Party
 
@@ -203,12 +203,12 @@ El objetivo del mismo consiste que tu personaje (un brujo/a) logre alzcanzar
           Lanza un hechizo en la dirección actual. Actualmente el brujo sólo conoce 2 hechizos:
             - :fireball => lanza una bola de fuego en la dirección en la que está mirando. Sirve para explotar otros brujos que intentan robarse TU cerveza. La bola de fuego avanza 3 casilleros hasta chocar con el primer obstáculo.
             - :dematerialize => hace que el brujo tome su forma inmaterial. Esto le permite atravesar obstáculos (por ejemplo otros brujos con los cuales el alcohol a dado por tierra) y paredes.
-          
+
     * `warlock.turn(direction)`
       Gira al brujo 90° en la dirección indicada. Los posibles valores para el parámetro son :right o :left
 
     * `warlock.look`
-         El brujo mira qué hay en la dirección actual y nos cuenta qué hay. Este método retorna: 
+         El brujo mira qué hay en la dirección actual y nos cuenta qué hay. Este método retorna:
           - :nothing => si en el siguiente espacio no hay nada,
           - :drunk   => si en el siguiente espacio hay alguna criatura bajo los efectos del alcohol
           - :beer    => si en el siguiente espacio esta la cerveza buscada
@@ -288,7 +288,7 @@ WarlockParty.new(party) do |warlock|
   ahead = warlock.look
   case ahead
     when :nothing
-      warlock.move! 
+      warlock.move!
     when :drunk
       warlock.cast! :fireball
     when :wall
@@ -313,7 +313,7 @@ WarlockParty.new(party) do |warlock|
   ahead = warlock.look
   case ahead
     when :nothing
-      warlock.move! 
+      warlock.move!
     when :drunk
       warlock.cast! :fireball
     when :wall
@@ -331,5 +331,3 @@ Los niveles se representan con la siguiente notación:
 * * (asterisco) => obstáculo
 * <, >, v, ^  (menor, mayor, v corta, acento circumflejo) => brujo mirando hacia la dirección indicada
 * . (punto) => paredes
-
-

@@ -40,7 +40,7 @@ HTTP y Sinatra
     1. Creá una API para una aplicación de prueba. Por ejemplo:
 
 
-        ![](practica-03_html_m1dc4aa4b.png)
+        ![](./04-materiales/last_fm.png)
 
     1. Tomá nota de tu API key
 
@@ -395,4 +395,3 @@ extensa, como por ejemplo.
         "error": "Cannot create already existent product"
     }
     ```
-
