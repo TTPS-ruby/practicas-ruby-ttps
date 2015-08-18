@@ -15,7 +15,7 @@ Para realizar esta parte de la práctica (y el resto de la materia también) nec
 computadora donde vayas a hacer los ejercicios. Para saber si tenés Git instalado, podés ejecutar el comando `git` en
 una terminal y analizar la salida:
 
-```bash
+```console
 $ git --version
 git version 2.5.0
 ```
@@ -30,7 +30,7 @@ que tenemos la versión `2.5.0` instalada y ya estamos listos para realizar los 
 Si al ejecutarlo recibiste un mensaje de error indicando que el comando `git` no fue encontrado, eso quiere decir que
 Git no está instalado en tu computadora, y por ende debés instalarlo ejecutando el siguiente comando:
 
-```bash
+```console
 # apt-get install -y git
 ```
 
