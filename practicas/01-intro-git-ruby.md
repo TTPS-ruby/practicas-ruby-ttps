@@ -100,7 +100,7 @@ nuestra computadora, y ruby-build es una extensión de Rbenv que simplifica la i
 
 Ejecutá la siguiente secuencia de comandos para instalar Ruby 2.2.2 en tu computadora:
 
-```bash
+```console
 # apt-get install -y autoconf bison build-essential lib{ssl,yaml,sqlite3}-dev libreadline6{,-dev} zlib1g{,-dev}
 $ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 $ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
