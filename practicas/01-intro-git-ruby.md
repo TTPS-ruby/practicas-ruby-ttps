@@ -148,7 +148,7 @@ $ rbenv global 2.2.2
 
    ```ruby
    reemplazar("3.times { |i| puts i }")
-   # => "3.times do\n |i| puts i\nend"
+   # => "3.times do\n |i| puts i \nend"
    ```
 
 6. Escribí una función que encuentra la suma de todos los números múltiplos de `3` ó `5` menores que un número `tope`
