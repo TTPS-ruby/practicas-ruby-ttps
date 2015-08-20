@@ -122,18 +122,14 @@ $ rbenv global 2.2.3
   2. Diccionario o _hash_ (`Hash`)
   3. String (`String`)
   4. Símbolo (`Symbol`)
-2. Investigá qué métodos provee Ruby para:
-  1. Conocer la lista de métodos de una clase.
-  2. Conocer la lista de métodos de instancia de una clase.
-  3. Conocer las variables de instancia de una clase.
-  4. Obtener la lista de ancestros (_superclases_) de una clase.
-3. ¿Qué devuelve la siguiente comparación? ¿Por qué?
+
+2. ¿Qué devuelve la siguiente comparación? ¿Por qué?
 
    ```ruby
    'TTPS Ruby'.object_id == 'TTPS Ruby'.object_id
    ```
 
-4. Escribí una función llamada `reemplazar` que reciba un `String` y que busque y reemplace en el mismo cualquier
+3. Escribí una función llamada `reemplazar` que reciba un `String` y que busque y reemplace en el mismo cualquier
    ocurrencia de `{` por `do\n` y cualquier ocurrencia de `}` por `\nend`, de modo que convierta los bloques escritos
    con llaves por bloques multilínea con `do` y `end`. Por ejemplo:
 
@@ -142,7 +138,7 @@ $ rbenv global 2.2.3
    # => "3.times do\n |i| puts i \nend"
    ```
 
-5. Escribí una función que convierta a palabras la hora actual, dividiendo en los siguientes rangos los minutos:
+4. Escribí una función que convierta a palabras la hora actual, dividiendo en los siguientes rangos los minutos:
 
    * Si el minuto está entre 0 y 10, debe decir "en punto",
    * si el minuto está entre 11 y 20, debe decir "y cuarto",
@@ -170,7 +166,7 @@ $ rbenv global 2.2.3
 
    > Tip: resolver utilizando rangos numéricos
 
-6. Escribí una función llamada `contar` que reciba como parámetro dos `string` y que retorne la cantidad de veces que
+5. Escribí una función llamada `contar` que reciba como parámetro dos `string` y que retorne la cantidad de veces que
    aparece el segundo `string` en el primero, sin importar mayúsculas y minúsculas. Por ejemplo:
 
    ```ruby
@@ -178,7 +174,7 @@ $ rbenv global 2.2.3
    # => 5
    ```
 
-7. Modificá la función anterior para que sólo considere como aparición del segundo `string` cuando se trate de palabras
+6. Modificá la función anterior para que sólo considere como aparición del segundo `string` cuando se trate de palabras
    completas. Por ejemplo:
 
    ```ruby
@@ -186,13 +182,14 @@ $ rbenv global 2.2.3
    # => 4
    ```
 
-8. Dada una cadena cualquiera, y utilizando los métodos que provee la clase `String`, realizá las siguientes
+7. Dada una cadena cualquiera, y utilizando los métodos que provee la clase `String`, realizá las siguientes
    operaciones sobre el `string`:
   1. Imprimilo con sus caracteres en orden inverso.
   2. Eliminá los espacios en blanco que contenga.
   3. Convertí cada uno de sus caracteres por su correspondiente valor ASCII.
   4. Cambiá las vocales por números (`a` por `4`, `e` por `3`, `i` por `1`, `o` por `0`, `u` por `6`).
-9. ¿Qué hace el siguiente código?
+
+8. ¿Qué hace el siguiente código?
 
    ```ruby
    [:upcase, :downcase, :capitalize, :swapcase].map do |meth|
@@ -200,16 +197,16 @@ $ rbenv global 2.2.3
    end
    ```
 
-10. Escribí una función que dado un arreglo que contenga varios `string` cualesquiera, retorne un nuevo arreglo donde
-    cada elemento es la longitud del `string` que se encuentra en la misma posición del arreglo recibido como parámetro.
-    Por ejemplo:
+9. Escribí una función que dado un arreglo que contenga varios `string` cualesquiera, retorne un nuevo arreglo donde
+   cada elemento es la longitud del `string` que se encuentra en la misma posición del arreglo recibido como parámetro.
+   Por ejemplo:
 
     ```ruby
     longitud(['TTPS', 'Opción', 'Ruby', 'Cursada 2015'])
     # => [4, 6, 4, 12]
     ```
 
-11. Escribí una función llamada `a_ul` que reciba un `Hash` y retorne un `String` con los pares de clave/valor del hash
+10. Escribí una función llamada `a_ul` que reciba un `Hash` y retorne un `String` con los pares de clave/valor del hash
     formateados en una lista HTML `<ul>`. Por ejemplo:
 
     ```ruby
@@ -217,7 +214,7 @@ $ rbenv global 2.2.3
     # => "<ul><li>perros: 1</li><li>gatos: 1</li><li>peces: 0</li></ul>"
     ```
 
-12. Escribí una función llamada `rot13` que _encripte_ un `string` recibido como parámetro utilizando el algoritmo
+11. Escribí una función llamada `rot13` que _encripte_ un `string` recibido como parámetro utilizando el algoritmo
     [`ROT13`](https://es.wikipedia.org/wiki/ROT13). Por ejemplo:
 
     ```ruby
@@ -225,7 +222,7 @@ $ rbenv global 2.2.3
     # => "¡Ovrairavqbf n yn phefnqn 2015 qr GGCF Bcpvóa Ehol!"
     ```
 
-13. Escribí una función más genérica, parecida a la del ejercicio anterior, que reciba como parámetro un `string` y un
+12. Escribí una función más genérica, parecida a la del ejercicio anterior, que reciba como parámetro un `string` y un
     número `n`, y que realice una _rotación_ de `n` lugares de las letras del `string` y retorne el resultado. Por
     ejemplo:
 
@@ -234,7 +231,7 @@ $ rbenv global 2.2.3
     # => "¡Ovrairavqbf n yn phefnqn 2015 qr GGCF Bcpvóa Ehol!"
     ```
 
-14. Escribí un _script_ en Ruby que le pida al usuario su nombre y lo utilice para saludarlo imprimiendo en pantalla
+13. Escribí un _script_ en Ruby que le pida al usuario su nombre y lo utilice para saludarlo imprimiendo en pantalla
     `¡Hola, <nombre>!`. Por ejemplo:
 
     ```bash
@@ -244,7 +241,7 @@ $ rbenv global 2.2.3
     ¡Hola, Matz!
     ```
 
-15. Dado un color expresado en notación [RGB](https://es.wikipedia.org/wiki/RGB), debés calcular su representación
+14. Dado un color expresado en notación [RGB](https://es.wikipedia.org/wiki/RGB), debés calcular su representación
     entera y hexadecimal, donde la notación _entera_ se define como `red + green*256 + blue*256*256` y la _hexadecimal_
     como el resultado de expresar en hexadecimal el valor de cada color y concatenarlos en orden. Por ejemplo:
 
@@ -255,11 +252,19 @@ $ rbenv global 2.2.3
     # => 16744448
     ```
 
+15. Investigá qué métodos provee Ruby para:
+  1. Conocer la lista de métodos de una clase.
+  2. Conocer la lista de métodos de instancia de una clase.
+  3. Conocer las variables de instancia de una clase.
+  4. Obtener la lista de ancestros (_superclases_) de una clase.
+
 16. Escribí una función que encuentre la suma de todos los números naturales múltiplos de `3` ó `5` menores que un
     número `tope` que reciba como parámetro.
+
 17. Cada nuevo término en la secuencia de Fibonacci es generado sumando los 2 términos anteriores. Los primeros 10
     términos son: `1`, `1`, `2`, `3`, `5`, `8`, `13`, `21`, `34`, `55`. Considerando los términos en la secuencia de
     Fibonacci cuyos valores no exceden los 4 millones, encontrá la suma de los términos pares.
+
 18. Un número _palíndromo_ se lee igual al derecho y al revés. El número palíndromo más grande obtenido de la
     multiplicación de dos números de 2 dígitos es `9009` (`91 * 99 = 9009`). Encontrá el palíndromo más grande obtenido a
     través de la multiplicación de dos números de 3 dígitos.
