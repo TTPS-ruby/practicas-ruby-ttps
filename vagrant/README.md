@@ -20,3 +20,11 @@ Una vez hecho esto, para poder usar la VM deben ingresar a la misma ejecutando e
 ```console
 $ vagrant ssh
 ```
+
+Una vez finalizado el uso de la VM, se la puede apagar para que no ocupe recursos mediante el comando
+
+```console
+$ vagrant halt
+```
+
+(Recordar que la próxima vez se deberá ejecutar nuevamente `vagrant up` antes de hacer `vagrant ssh`)
