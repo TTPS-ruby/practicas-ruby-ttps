@@ -151,16 +151,16 @@ $ rbenv global 2.2.3
 
    ```ruby
    # A las 10:01
-   en_palabras(Time.current)
+   en_palabras(Time.now)
    # => "Son las 10 en punto"
    # A las 9:33
-   en_palabras(Time.current)
+   en_palabras(Time.now)
    # => "Son las 9 y media"
    # A las 9:45
-   en_palabras(Time.current)
+   en_palabras(Time.now)
    # => "Son las 10 menos cuarto"
    # A las 6:58
-   en_palabras(Time.current)
+   en_palabras(Time.now)
    # => "Casi son las 7"
    ```
 
