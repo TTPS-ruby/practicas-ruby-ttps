@@ -166,9 +166,24 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
 
     > Tips: investigá `Module#alias_method` y `Module#included`.
 
-13. **TODO**
+13. Dada la siguiente clase _abstracta_ `GenericFactory`, implementá subclases de la misma que permitan la creación
+    de instancias de dichas clases mediante el uso del método de clase `.create`, de manera tal que luego puedas usar
+    esa lógica para instanciar objetos sin invocar directamente el constructor `new`.
 
-14. **TODO**
+    ```ruby
+    class GenericFactory
+      def self.create(**args)
+        new(**args)
+      end
+
+      def initialize(**args)
+        raise NotImplementedError
+      end
+    end
+    ```
+
+14. Modificá la implementación del ejercicio anterior para que `GenericFactory` sea un módulo que se incluya como
+    _Mixin_ en las subclases que implementaste. ¿Qué modificaciones tuviste que hacer en tus clases?
 
 15. Extendé las clases `TrueClass` y `FalseClass` para que ambas respondan al método de instancia `opposite`, el cual en
     cada caso debe retornar el valor opuesto al que recibe la invocación al método. Por ejemplo:
@@ -196,7 +211,17 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
     # => false
     ```
 
-17. **TODO**
+17. Implementá un método que reciba como parámetros un `Hash` y `Proc`, y que devuelva un nuevo `Hash` cuyas las claves
+    sean los valores del `Hash` recibido como parámetro, y cuyos valores sean el resultado de invocar el `Proc` con cada
+    clave del `Hash` original.
+
+    Por ejemplo:
+
+    ```ruby
+    hash = { 'clave' => 1, :otra_clave => 'valor' }
+    procesar_hash(hash, ->(x) { x.to_s.upcase })
+    # => { 1 => 'CLAVE', 'valor' => 'OTRA_CLAVE' }
+    ```
 
 18. **TODO**
 
@@ -207,9 +232,14 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
 20. Si no lo hiciste de esa forma en la práctica 1, escribí un enumerador que calcule la serie de Fibonacci.
 
 21. ¿Qué son los _lazy enumerators_? ¿Qué ventajas les ves con respecto al uso de los enumeradores que no son _lazy_?
-    > Analizalo pensando en grandes conjuntos de datos.
 
-22. **TODO**
+    > Tip: Analizalo pensando en conjuntos grandes de datos.
+
+22. Extendé la clase `Array` con el método `randomly` que funcione de la siguiente manera:
+
+    * Si recibe un bloque, debe invocar ese bloque con cada uno de los elementos del arreglo en orden aleatorio.
+    * Si no recibe un bloque, debe devolver un enumerador que va arrojando, de a uno, llos elementos del arreglo en
+      orden aleatorio.
 
 23. **TODO**
 
