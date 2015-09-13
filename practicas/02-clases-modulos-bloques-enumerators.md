@@ -298,7 +298,7 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
 
     Dada la siguiente implementación de la clase `Image`, se te pide que la modifiques para que su uso consuma menos
     recursos (principalmente procesamiento) haciendo que los cálculos de los filtros se hagan únicamente cuando se pida
-    la información de la cabecera de la imagen (representada en este caso mediante el método `Image#header`).
+    la información de la cabecera de la imagen (representada en este caso mediante el método `Image#header_bytes`).
 
     ```ruby
     require 'matrix'
@@ -311,8 +311,8 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
         self.data = data || Matrix.build(size) { Math::PI }
       end
 
-      def header
-        Image.new Matrix.rows([data.first(size)])
+      def header_bytes
+        Matrix.rows([data.first(size)])
       end
 
       # Distintos filtros de imágenes:
@@ -355,8 +355,8 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
 
     ```ruby
     image = Image.new
-    image.filter_a.filter_c.filter_e        # => Esto no realiza ningún cálculo.
-    image.filter_a.filter_c.filter_e.header # => Esto sí realiza cálculos para obtener la info de la cabecera.
+    image.filter_a.filter_c.filter_e              # => Esto no realiza ningún cálculo.
+    image.filter_a.filter_c.filter_e.header_bytes # => Esto sí realiza cálculos para obtener la info de la cabecera.
     ```
 
     > Tip 1: Para este ejercicio es útil desactivar el `echo` de `irb` (si lo usás para probar el ejercicio). Para esto,
