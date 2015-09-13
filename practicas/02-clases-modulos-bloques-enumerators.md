@@ -197,6 +197,40 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
     # => true
     ```
 
+16. Analizá el script Ruby presentado a continuación e indicá:
+  1. ¿Qué imprimen cada una de las siguientes sentencias? ¿De dónde está obteniendo el valor?
+    a. ```ruby
+       puts A.value
+       ```
+    b. ```ruby
+       puts A::B.value
+       ```
+    c. ```ruby
+       puts C::D.value
+       ```
+    d. ```ruby
+       puts C::E.value
+       ```
+    e. ```ruby
+       puts F.value
+       ```
+  3. ¿Qué pasaría si ejecutases las siguientes sentencias? ¿Por qué?
+    a. ```ruby
+       puts A::value
+       ```
+    b. ```ruby
+       puts A.new.value
+       ```
+    c. ```ruby
+       puts B.value
+       ```
+    d. ```ruby
+       puts D.value
+       ```
+    e. ```ruby
+       puts C.value
+       ```
+
 ## Bloques
 
 16. Escribí un método `da_nil?` que reciba un bloque, lo invoque y retorne si el valor de retorno del bloque fue `nil`.
@@ -251,4 +285,83 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
     * Si no recibe un bloque, debe devolver un enumerador que va arrojando, de a uno, llos elementos del arreglo en
       orden aleatorio.
 
-23. **TODO**
+23. Suponé que tenés la clase `Image` detallada más abajo para realizar procesamiento de imágenes. Esta clase representa
+    en sí misma una imagen y dispone de métodos para aplicarle diversos filtros (`filter_a`, `filter_b`, `filter_c`,
+    `filter_d`, `filter_e` y `filter_f`) generando y retornando una nueva instancia de `Image` cada vez que se los
+    invoca. Por ejemplo, el siguiente código toma una imagen inicial y retorna otra instancia de `Image` que representa
+    la imagen original con los filtros `A`, `C` y `E` aplicados:
+
+    ```ruby
+    image = Image.new
+    image.filter_a.filter_c.filter_e
+    ```
+
+    Dada la siguiente implementación de la clase `Image`, se te pide que la modifiques para que su uso consuma menos
+    recursos (principalmente procesamiento) haciendo que los cálculos de los filtros se hagan únicamente cuando se pida
+    la información de la cabecera de la imagen (representada en este caso mediante el método `Image#header`).
+
+    ```ruby
+    require 'matrix'
+
+    class Image
+      attr_accessor :data, :size
+
+      def initialize(data = nil, size = 1024)
+        self.size = size
+        self.data = data || Matrix.build(size) { Math::PI }
+      end
+
+      def header
+        Image.new Matrix.rows([data.first(size)])
+      end
+
+      # Distintos filtros de imágenes:
+
+      def filter_a
+        Image.new data.map { |e| e ** 1.2 }
+      end
+
+      def filter_b
+        Image.new data.map { |e| e ** 1.4 }
+      end
+
+      def filter_c
+        Image.new data.map { |e| e ** 1.8 }
+      end
+
+      def filter_d
+        Image.new data.map { |e| e ** 2 }
+      end
+
+      def filter_e
+        Image.new data.map { |e| e ** 2.2 }
+      end
+
+      def filter_f
+        Image.new data.map { |e| e ** 2.4 }
+      end
+
+      #- Fin de filtros
+
+      def all_filters
+        ('a'..'f').inject(self) do |pipe, type|
+          pipe.public_send "filter_#{type}"
+        end
+      end
+    end
+    ```
+
+    Las modificaciones que hagas deberían hacer que se cumpla lo siguiente:
+
+    ```ruby
+    image = Image.new
+    image.filter_a.filter_c.filter_e        # => Esto no realiza ningún cálculo.
+    image.filter_a.filter_c.filter_e.header # => Esto sí realiza cálculos para obtener la info de la cabecera.
+    ```
+
+    > Tip 1: Para este ejercicio es útil desactivar el `echo` de `irb` (si lo usás para probar el ejercicio). Para esto,
+    > podés escribir en la consola:
+    > ```ruby
+    irb_context.echo = false
+    ```
+    > Tip 2: La solución es vaga.
