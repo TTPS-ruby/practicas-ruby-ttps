@@ -11,9 +11,9 @@
 # ==========
 #
 # Se nos pide implementar un módulo que permita almacenar en memoria instancias de distintas clases, permitiendo
-# utilizar así un mecanismo muy sencillo de caching de objetos. Ya disponemos de una clase `Storage` para utilizar que
-# mantiene un diccionario de claves y valores, agrupados por el _tipo_ de cada valor que se obtiene mediante el envío
-# del mensaje `type` al objeto que se intenta guardar.
+# utilizar así un mecanismo muy sencillo de caching de objetos. Ya disponemos de una clase `ACME::Storage` para utilizar
+# que mantiene un diccionario de claves y valores, agrupados por el _tipo_ de cada valor que se obtiene mediante el
+# envío del mensaje `type` al objeto que se intenta guardar.
 #
 # Las clases que utilizarán este mecanismo de persistencia son 6:
 # * `Person`
@@ -34,7 +34,7 @@
 
 # Estos archivos que incluimos son la implementación del ejemplo. En este archivo únicamente haremos uso de lo que se
 # define en ellos, a modo de ensayo y prueba de cómo podrían utilizarse esas clases y módulos.
-require_relative 'storage'
+require_relative 'acme'
 require_relative 'storable'
 require_relative 'person'
 require_relative 'employee'
@@ -47,15 +47,15 @@ def find_and_compare(v)
   v == v.class.find(v.id) ? '✓' : ''
 end
 
-puts "Al iniciar, el storage está vacío. Tiene #{Storage.types.count} tipos almacenados."
+puts "Al iniciar, el storage está vacío. Tiene #{ACME::Storage.types.count} tipos almacenados."
 puts "Entonces creamos y almacenamos algunos objetos..."
 tato = Person.new(1, 'Tato').store
 tota = Person.new(2, 'Tota').store
 rectorado = Building.new(1, 'Rectorado UNLP', 'Avenida 7 nro 776').store
 oficina = Office.new(10, 101, 1, rectorado).store
 empleado = Employee.new(3, 'Empleado del mes', nil, '1238/2', oficina).store
-puts "Luego, el storage tiene valores de los siguientes tipos: #{Storage.types.join(', ')}."
-puts "Podemos chequear si lo que el Storage tiene en su store interno coincide con lo que guardamos en él:"
+puts "Luego, el storage tiene valores de los siguientes tipos: #{ACME::Storage.types.join(', ')}."
+puts "Podemos chequear si lo que ACME::Storage tiene en su store interno coincide con lo que guardamos en él:"
 puts "  - Tato: #{find_and_compare(tato)}"
 puts "  - Tota: #{find_and_compare(tota)}"
 puts "  - Rectorado: #{find_and_compare(rectorado)}"

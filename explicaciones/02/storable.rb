@@ -1,8 +1,8 @@
-require_relative 'storage'
+require_relative 'acme'
 
 # Este módulo es la implementación de nuestro Mixin: nos permite encapsular la lógica que queremos compartir en las
-# distintas clases que deben poder persistirse en el `Storage` sin necesidad de crear una jerarquía de clases que en
-# realidad no lo es por el simple hecho de que las clases compartan cierta parte de su comportamiento.
+# distintas clases que deben poder persistirse en el `ACME::Storage` sin necesidad de crear una jerarquía de clases que
+# en realidad no lo es por el simple hecho de que las clases compartan cierta parte de su comportamiento.
 module Storable
   # Este módulo contiene los métodos que terminarán siendo de clase en aquellas que incluyan `Storable`.
   # @see Storable.included
@@ -15,7 +15,7 @@ module Storable
       find(key) || raise("No element found for key #{key} of type #{type_for_storage}")
     end
 
-    # Implementación básica del método #type que `Storage` requiere que los objetos a guardar en éste respondan.
+    # Implementación básica del método #type que `ACME::Storage` requiere que los objetos a guardar en éste respondan.
     # Por defecto, utilizamos el nombre de la clase como tipo.
     def type_for_storage
       name
@@ -24,11 +24,11 @@ module Storable
     # Definir un método para encapsular el backend de storage que vamos a usar nos facilitaría cambiarlo si así lo
     # quisiéramos, con solo modificar o reimplementar este método.
     def storage
-      Storage
+      ACME::Storage
     end
   end
 
-  # Delegamos el método #type que requiere `Storage` en el método de clase .type_for_storage.
+  # Delegamos el método #type que requiere `ACME::Storage` en el método de clase .type_for_storage.
   def type
     self.class.type_for_storage
   end
@@ -39,8 +39,8 @@ module Storable
   end
 
   # Implementación básica del método #store_id utilizado internamente por este módulo para almacenar los objetos en el
-  # `Storage`. Si el objeto responde a `#id`, se utiliza ese valor como clave, caso contrario se utiliza el `object_id`
-  # del objeto.
+  # `ACME::Storage`. Si el objeto responde a `#id`, se utiliza ese valor como clave, caso contrario se utiliza el
+  # `object_id` del objeto.
   def store_id
     if respond_to? :id
       id

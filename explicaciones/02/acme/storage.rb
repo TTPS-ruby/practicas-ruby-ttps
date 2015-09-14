@@ -17,38 +17,40 @@
 #     end
 #
 #     argentina = Country.new(:ar, 'Argentina')
-#     Storage[argentina.iso_code] = argentina
+#     ACME::Storage[argentina.iso_code] = argentina
 #
 # Y luego, puede volver a obtenerse ese valor del almacenamiento de la siguiente manera:
 #
-#     Storage[:country, :ar].name
+#     ACME::Storage[:country, :ar].name
 #     # => "Argentina"
 #
 # O pueden obtenerse todos los valores almacenados para un tipo particular:
 #
-#     Storage[:country].keys
+#     ACME::Storage[:country].keys
 #     # => [:ar]
-class Storage
-  def self.[]=(key, value)
-    store[value.type][key] = value
-  rescue NoMethodError
-    raise "Unable to store object of class #{value.class} as it doesn't respond to #type"
-  end
-
-  def self.[](type, key = nil)
-    scope = store[type]
-    scope = scope[key] unless key.nil?
-    scope
-  end
-
-  def self.types
-    store.keys
-  end
-
-  def self.store
-    @store ||= Hash.new do |hash, key|
-      hash[key] = {}
+module ACME
+  class Storage
+    def self.[]=(key, value)
+      store[value.type][key] = value
+    rescue NoMethodError
+      raise "Unable to store object of class #{value.class} as it doesn't respond to #type"
     end
+
+    def self.[](type, key = nil)
+      scope = store[type]
+      scope = scope[key] unless key.nil?
+      scope
+    end
+
+    def self.types
+      store.keys
+    end
+
+    def self.store
+      @store ||= Hash.new do |hash, key|
+        hash[key] = {}
+      end
+    end
+    private_class_method :store
   end
-  private_class_method :store
 end
