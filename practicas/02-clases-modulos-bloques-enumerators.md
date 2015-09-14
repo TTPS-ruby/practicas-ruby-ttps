@@ -56,7 +56,7 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
    Por ejemplo:
 
    ```ruby
-   cuanto_falta? Date.new(2015, 12, 31, 23, 59, 59)
+   cuanto_falta? Time.new(2015, 12, 31, 23, 59, 59)
    # Debe retornar la cantidad de minutos que faltan para las 23:59:59 del 31/12/2015
    cuanto_falta?
    # Debe retornar la cantidad de minutos que faltan para la medianoche de hoy
@@ -100,7 +100,23 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
 
 ## Clases y módulos
 
-8. Modelá con clases
+8. Modelá con una jerarquía de clases algo sencillo que represente la siguiente situación:
+   * Tres tipos de vehículo: `Auto`, `Moto` y `Lancha`
+   * Los tres tipos arrancan usando una llave.
+   * El auto, adicionalmente, requiere que no esté puesto el freno de mano y que el cambio esté en punto muerto. La
+     moto, por otra parte, requiere una patada (sin la llave). La lancha arranca con la llave y listo.
+   * El arranque de los tres vehículos se prueba en un taller. La especificación de `Taller` es la siguiente:
+
+     ```ruby
+     class Taller
+       def probar(objeto)
+         objeto.arrancar
+       end
+     end
+     ```
+
+     Suponé que, posteriormente, el taller necesita probar una motosierra. ¿Podrías hacerlo? ¿Cómo? ¿Qué concepto
+     del lenguaje estás usando para poder realizar esto?
 
 9. ¿Qué diferencia hay entre el uso de `include` y `extend` a la hora de incorporar un módulo en una clase?
   1. Si quisieras usar un módulo para agregar métodos de instancia a una clase, ¿qué forma usarías a la hora de
@@ -113,9 +129,7 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
   1. `#di_tcejbo`: Imprime el `object_id` del receptor en espejo (en orden inverso).
   2. `#ssalc`: Imprime el nombre de la clase del receptor en espejo.
 
-11. Analizá el siguiente código e indicá qué retornaría cada invocación
-
-12. Implementá el Mixin `Countable` que te permita hacer que cualquier clase cuente la cantidad de veces que los
+11. Implementá el Mixin `Countable` que te permita hacer que cualquier clase cuente la cantidad de veces que los
     métodos de instancia definidos en ella es invocado. Utilizalo en distintas clases, tanto desarrolladas por vos como
     clases de la librería standard de Ruby, y chequeá los resultados. El Mixin debe tener los siguientes métodos:
   1. `count_invocations_of(sym)`: método de clase que al invocarse realiza las tareas necesarias para contabilizar las
@@ -166,7 +180,7 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
 
     > Tips: investigá `Module#alias_method` y `Module#included`.
 
-13. Dada la siguiente clase _abstracta_ `GenericFactory`, implementá subclases de la misma que permitan la creación
+12. Dada la siguiente clase _abstracta_ `GenericFactory`, implementá subclases de la misma que permitan la creación
     de instancias de dichas clases mediante el uso del método de clase `.create`, de manera tal que luego puedas usar
     esa lógica para instanciar objetos sin invocar directamente el constructor `new`.
 
@@ -182,10 +196,10 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
     end
     ```
 
-14. Modificá la implementación del ejercicio anterior para que `GenericFactory` sea un módulo que se incluya como
+13. Modificá la implementación del ejercicio anterior para que `GenericFactory` sea un módulo que se incluya como
     _Mixin_ en las subclases que implementaste. ¿Qué modificaciones tuviste que hacer en tus clases?
 
-15. Extendé las clases `TrueClass` y `FalseClass` para que ambas respondan al método de instancia `opposite`, el cual en
+14. Extendé las clases `TrueClass` y `FalseClass` para que ambas respondan al método de instancia `opposite`, el cual en
     cada caso debe retornar el valor opuesto al que recibe la invocación al método. Por ejemplo:
 
     ```ruby
@@ -197,39 +211,20 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
     # => true
     ```
 
-16. Analizá el script Ruby presentado a continuación e indicá:
+15. Analizá el script Ruby presentado a continuación e indicá:
+
   1. ¿Qué imprimen cada una de las siguientes sentencias? ¿De dónde está obteniendo el valor?
-    a. ```ruby
-       puts A.value
-       ```
-    b. ```ruby
-       puts A::B.value
-       ```
-    c. ```ruby
-       puts C::D.value
-       ```
-    d. ```ruby
-       puts C::E.value
-       ```
-    e. ```ruby
-       puts F.value
-       ```
-  3. ¿Qué pasaría si ejecutases las siguientes sentencias? ¿Por qué?
-    a. ```ruby
-       puts A::value
-       ```
-    b. ```ruby
-       puts A.new.value
-       ```
-    c. ```ruby
-       puts B.value
-       ```
-    d. ```ruby
-       puts D.value
-       ```
-    e. ```ruby
-       puts C.value
-       ```
+     1. `puts A.value`
+     2. `puts A::B.value`
+     3. `puts C::D.value`
+     4. `puts C::E.value`
+     5. `puts F.value`
+  2. ¿Qué pasaría si ejecutases las siguientes sentencias? ¿Por qué?
+     1. `puts A::value`
+     2. `puts A.new.value`
+     3. `puts B.value`
+     4. `puts D.value`
+     5. `puts C.value`
 
 ## Bloques
 
@@ -282,8 +277,8 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
 22. Extendé la clase `Array` con el método `randomly` que funcione de la siguiente manera:
 
     * Si recibe un bloque, debe invocar ese bloque con cada uno de los elementos del arreglo en orden aleatorio.
-    * Si no recibe un bloque, debe devolver un enumerador que va arrojando, de a uno, llos elementos del arreglo en
-      orden aleatorio.
+    * Si no recibe un bloque, debe devolver un enumerador que va arrojando, de a uno, los elementos del arreglo en orden
+      aleatorio.
 
 23. Suponé que tenés la clase `Image` detallada más abajo para realizar procesamiento de imágenes. Esta clase representa
     en sí misma una imagen y dispone de métodos para aplicarle diversos filtros (`filter_a`, `filter_b`, `filter_c`,
