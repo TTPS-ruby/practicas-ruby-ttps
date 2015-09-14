@@ -7,10 +7,13 @@ module Storable
   # Este módulo contiene los métodos que terminarán siendo de clase en aquellas que incluyan `Storable`.
   # @see Storable.included
   module ClassMethods
+    # Método de clase para recuperar un elemento del storage por su clave.
     def find(key)
       storage[type_for_storage, key]
     end
 
+    # Alternativa al método .find de este módulo que arroja una excepción si no encuentra un valor para la clave `key`.
+    # @see .find
     def find!(key)
       find(key) || raise("No element found for key #{key} of type #{type_for_storage}")
     end

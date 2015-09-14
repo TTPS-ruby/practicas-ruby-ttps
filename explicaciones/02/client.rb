@@ -9,6 +9,8 @@ class Client < Person
     superclass.name
   end
 
+  # Este método permite obtener el objeto `Employee` identificado por el valor que tenemos almacenado en el atributo
+  # `representative_id`.
   def assigned_representative
     Employee.find(representative_id)
   end

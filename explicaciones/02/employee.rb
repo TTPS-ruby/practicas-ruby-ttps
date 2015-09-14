@@ -6,6 +6,7 @@ require_relative 'office'
 class Employee < Person
   attr_accessor :file_number, :office_id
 
+  # Definimos un constructor básico para poder establecer los atributos de la nueva instancia en el mismo `new`.
   def initialize(id, name, phone_number = nil, file_number = nil, office = nil)
     super(id, name, phone_number)
     self.file_number = file_number
@@ -19,6 +20,8 @@ class Employee < Person
     superclass.name
   end
 
+  # Este método permite obtener el objeto `Office` identificado por el valor que tenemos almacenado en el atributo
+  # `office_id`.
   def office
     Office.find(office_id)
   end
