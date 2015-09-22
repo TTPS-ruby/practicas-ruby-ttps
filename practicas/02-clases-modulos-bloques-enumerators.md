@@ -213,6 +213,54 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
 
 15. Analizá el script Ruby presentado a continuación e indicá:
 
+    ```ruby
+    VALUE = 'global'
+   
+    module A
+      VALUE = 'A'
+   
+      class B
+        VALUE = 'B'
+   
+        def self.value
+          VALUE
+        end
+   
+        def value
+          'iB'
+        end
+      end
+   
+      def self.value
+        VALUE
+      end
+    end
+   
+    class C
+      class D
+        VALUE = 'D'
+    
+        def self.value
+          VALUE
+        end
+      end
+   
+      module E
+        def self.value
+          VALUE
+        end
+      end
+   
+      def self.value
+        VALUE
+      end
+    end
+   
+    class F < C
+      VALUE = 'F'
+    end
+    ```
+
   1. ¿Qué imprimen cada una de las siguientes sentencias? ¿De dónde está obteniendo el valor?
      1. `puts A.value`
      2. `puts A::B.value`
@@ -223,8 +271,9 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
      1. `puts A::value`
      2. `puts A.new.value`
      3. `puts B.value`
-     4. `puts D.value`
+     4. `puts C::D.value`
      5. `puts C.value`
+     6. `puts F.superclass.value`
 
 ## Bloques
 
