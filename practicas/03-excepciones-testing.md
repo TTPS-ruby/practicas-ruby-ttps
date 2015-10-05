@@ -24,6 +24,7 @@ principales clases de excepción, y a su vez introduce algunos ejercicios sobre 
 4. ¿Para qué sirve `retry`? ¿Cómo evitarías caer en un loop infinito al usarla?
 
 5. ¿Cuáles son las diferencias entre los siguientes métodos?
+
    ```ruby
    def opcion_1
      a = [1, nil, 3, nil, 5, nil, 7, nil, 9, nil]
