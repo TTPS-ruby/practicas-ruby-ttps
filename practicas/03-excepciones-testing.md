@@ -163,6 +163,7 @@ principales clases de excepción, y a su vez introduce algunos ejercicios sobre 
 10. Dado los siguientes tests, escribí el método correspondiente (el que se invoca en cada uno) para hacer que pasen:
 
     ```ruby
+    require 'minitest/autorun'
     require 'minitest/spec'
 
     describe '#incrementar' do
@@ -182,10 +183,10 @@ principales clases de excepción, y a su vez introduce algunos ejercicios sobre 
       describe 'cuando el valor es un string' do
         it 'arroja un RuntimeError' do
           x = '10'
-          assert_raise(RuntimeError) do
+          assert_raises(RuntimeError) do
             incrementar(x)
           end
-          assert_raise(RuntimeError) do
+          assert_raises(RuntimeError) do
             incrementar(x, 9)
           end
         end
