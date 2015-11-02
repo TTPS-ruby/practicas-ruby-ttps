@@ -5,9 +5,10 @@ class Smiley
 
   def call(env)
     status, headers, response = @app.call(env)
-    new_response = response.map { |l| smileify(l) }
-    headers['Content-Length'] = new_response.map(&:length).inject(0, &:+).to_s
-    [status, headers, new_response]
+    new_response = ''
+    response.each { |l| new_response << smileify(l) }
+    headers['Content-Length'] = new_response.length.to_s
+    [status, headers, [new_response]]
   end
 
   def smileify(string)
