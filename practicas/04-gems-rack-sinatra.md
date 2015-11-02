@@ -9,7 +9,7 @@ comenzaremos a utilizar la herramienta para desarrollo de aplicaciones web en Ru
 
 1. ¿Qué es una gema? ¿Para qué sirve? ¿Qué estructura tienen?
 2. ¿Cuáles son las principales diferencias entre el comando `gem` y Bundler? ¿Hacen lo mismo?
-3. ¿Dónde instala las gemas el comando `gem`? ¿Y Bundler?
+3. ¿Dónde instalan las gemas los comandos `gem` y `bundle`?
    > Tip: `gem which` y `bundle show`.
 4. ¿Para qué sirve el comando `gem server`? ¿Qué información podés obtener al usarlo?
 5. Investigá un poco sobre *Semantic Versioning* (o *SemVer*). ¿Qué finalidad tiene? ¿Cómo se compone una versión? ¿Ante
