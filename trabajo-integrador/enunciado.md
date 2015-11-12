@@ -12,7 +12,7 @@ algunas tareas que hoy por hoy llevan de forma manual, nada sistemática, en hoj
 Como te hicieron *una oferta que no podés rechazar*, aceptaste de muy buena gana realizar el desarrollo.
 
 Están *muy* apurados por cambiar su forma de trabajo, y por eso te fijaron como fecha límite para tener la aplicación el
-día **Jueves 21 de Diciembre de 2015**. Ese día esperan tener toda la funcionalidad implementada y lista para ser usada,
+día **21 de Diciembre de 2015**. Ese día esperan tener toda la funcionalidad implementada y lista para ser usada,
 aunque pueden aceptar que la interfaz de usuario no sea *muy linda*.
 
 A continuación tenés el resultado del análisis de requerimientos que tu Product Owner obtuvo tras algunas reuniones con
