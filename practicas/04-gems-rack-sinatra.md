@@ -37,8 +37,8 @@ comenzaremos a utilizar la herramienta para desarrollo de aplicaciones web en Ru
      ```
 
    8. Ahora ejecutá este nuevo archivo:
-     * `ruby prueba.rb`
-     * `bundle exec prueba.rb`
+     * `ruby prueba_dos.rb`
+     * `bundle exec ruby prueba_dos.rb`
 
 7. Utilizando el proyecto creado en el punto anterior como referencia, contestá las siguientes preguntas:
   1. ¿Qué finalidad tiene el archivo `Gemfile`?
