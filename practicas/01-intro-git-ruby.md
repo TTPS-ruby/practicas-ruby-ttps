@@ -7,7 +7,7 @@ utilizaremos a lo largo de la materia, y comenzaremos a tener contacto con el le
 
 > Nota: para simplificar, todos los comandos que se muestran en esta práctica asumen un sistema operativo Ubuntu.
 
-## Conociendo Git
+## I. Repaso de Git
 
 ### Prerequisitos
 
@@ -17,21 +17,21 @@ una terminal y analizar la salida:
 
 ```console
 $ git --version
-git version 2.5.0
+git version 2.9.2
 ```
 
 > En esta y todas las prácticas, cuando estemos hablando de ejecutar comandos en una terminal vamos a denotar las líneas
 > que tenés que ejecutar con un símbolo de prompt `$` si debés ejecutarlo con tu usuario o `#` si debés hacerlo con un
 > usuario con privilegios de administrador (típicamente referenciado como el usuario `root`).
 
-En el ejemplo anterior ejecutamos el comando `git --version` y obtuvimos la salida `git version 2.5.0`, lo cual indica
-que tenemos la versión `2.5.0` instalada y ya estamos listos para realizar los ejercicios de esta parte de la práctica.
+En el ejemplo anterior ejecutamos el comando `git --version` y obtuvimos la salida `git version 2.9.2`, lo cual indica
+que tenemos la versión `2.9.2` instalada y ya estamos listos para realizar los ejercicios de esta parte de la práctica.
 
 Si al ejecutarlo recibiste un mensaje de error indicando que el comando `git` no fue encontrado, eso quiere decir que
 Git no está instalado en tu computadora, y por ende debés instalarlo ejecutando el siguiente comando:
 
 ```console
-# apt-get install -y git
+# apt-get update -qq && apt-get install -y git
 ```
 
 Una vez finalizada la instalación el comando `git` estará disponible para que lo uses.
@@ -56,7 +56,9 @@ querramos: `git help`.
    agregar archivos.
 4. ¿Cuáles son los estados posibles en Git para un archivo? ¿Qué significa cada uno?
 5. Cloná el repositorio de materiales de la materia: `https://github.com/TTPS-ruby/capacitacion-ruby-ttps.git`. Una vez
-   finalizado, ¿cuál es el _hash_ del último commit que hay en el repositorio que clonaste? _Tip: `git log`_.
+   finalizado, ¿cuál es el _hash_ del último commit que hay en el repositorio que clonaste?
+   
+   >  Tip: `git log`.
 6. ¿Para qué se utilizan los siguientes subcomandos?
   1. `init`
   2. `status`
@@ -75,7 +77,8 @@ querramos: `git help`.
    su _hash_ (por ejemplo, `800dcba6c8bb2881d90dd39c285a81eabee5effa`), y luego utilizá el subcomando `checkout` para
    _viajar en el tiempo_ (apuntar tu copia local) a ese commit. ¿Qué commits muestra ahora `git log`? ¿Qué ocurrió con
    los commits que no aparecen? ¿Qué dice el subcomando `status`?
-9. Volvé al último commit de la rama principal (`master`) usando nuevamente el subcomando `checkout`. Corroborá
+9. Volvé al último commit de la rama principal (`master`) usando nuevamente el subcomando `checkout`.
+   Corroborá que efectivamente haya ocurrido esto.
 10. Creá un directorio vacío en el raiz del proyecto clonado. ¿En qué estado aparece en el `git status`? ¿Por qué?
 11. Creá un archivo vacío dentro del directorio que creaste en el ejercicio anterior y volvé a ejecutar el subcomando
     `status`. ¿Qué ocurre ahora? ¿Por qué?
@@ -84,12 +87,12 @@ querramos: `git help`.
 13. Actualizá el contenido de tu copia local mediante el subcomando `pull`.
 
 
-## Ruby: sintaxis y tipos básicos
+## II. Ruby: sintaxis y tipos básicos
 
 ### Prerequisitos
 
 Antes de realizar los ejercicios de esta parte, necesitás tener instalada la última versión de Ruby en tu computadora.
-Al momento de publicar esta práctica la última versión estable de Ruby es la `2.2.3`, por lo que instalaremos esa
+Al momento de publicar esta práctica la última versión estable de Ruby es la `2.3.1`, por lo que instalaremos esa
 versión utilizando [Rbenv](https://github.com/sstephenson/rbenv#installation) y su _plugin_
 [ruby-build](https://github.com/sstephenson/ruby-build#installation). Rbenv permite usar distintas versiones de Ruby en
 nuestra computadora, y ruby-build es una extensión de Rbenv que simplifica la instalación de las versiones del lenguaje.
@@ -99,17 +102,18 @@ nuestra computadora, y ruby-build es una extensión de Rbenv que simplifica la i
 > lo que te recomendamos que leas los `README` de las dos herramientas que antes mencionamos para conocer más en
 > profundidad cómo funcionan.
 
-Ejecutá la siguiente secuencia de comandos para instalar Ruby 2.2.3 en tu computadora:
+Ejecutá la siguiente secuencia de comandos para instalar Ruby 2.3.1 en tu computadora:
 
 ```console
 # apt-get install -y autoconf bison build-essential lib{ssl,yaml,sqlite3}-dev libreadline6{,-dev} zlib1g{,-dev}
 $ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+$ cd ~/.rbenv && src/configure && make -C src
 $ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 $ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 $ source ~/.bashrc
-$ rbenv install 2.2.3
-$ rbenv global 2.2.3
+$ rbenv install 2.3.1
+$ rbenv global 2.3.1
 ```
 
 ### Ejercicios
@@ -193,7 +197,7 @@ $ rbenv global 2.2.3
 
    ```ruby
    [:upcase, :downcase, :capitalize, :swapcase].map do |meth|
-     "TTPS Opción Ruby".send(meth)
+     "TTPS Ruby".send(meth)
    end
    ```
 
@@ -264,7 +268,3 @@ $ rbenv global 2.2.3
 17. Cada nuevo término en la secuencia de Fibonacci es generado sumando los 2 términos anteriores. Los primeros 10
     términos son: `1`, `1`, `2`, `3`, `5`, `8`, `13`, `21`, `34`, `55`. Considerando los términos en la secuencia de
     Fibonacci cuyos valores no exceden los 4 millones, encontrá la suma de los términos pares.
-
-18. Un número _palíndromo_ se lee igual al derecho y al revés. El número palíndromo más grande obtenido de la
-    multiplicación de dos números de 2 dígitos es `9009` (`91 * 99 = 9009`). Encontrá el palíndromo más grande obtenido a
-    través de la multiplicación de dos números de 3 dígitos.
