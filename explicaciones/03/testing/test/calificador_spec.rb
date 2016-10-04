@@ -104,7 +104,9 @@ describe Calificador do
       @calificador.porcentajes.values.inject(0, &:+).must_equal 100
     end
 
-    it 'must include every possible mark part (originalidad, simplicidad, etc.)'
+    it 'must include every possible mark part (originalidad, simplicidad, etc.)'do
+      @calificador.porcentajes.keys.must_equal [:originalidad, :simplicidad, :prolijidad, :entrega_a_termino, :desarrollo, :bonus_asistencia]
+    end
   end
 
   describe '#porcentaje_aprobacion' do
@@ -150,12 +152,22 @@ describe Calificador do
     end
 
     describe '#entrega_a_termino' do
+      before do
+        @trabajo = TrabajoFactory.build
+      end
+
       describe 'when the delivery is on time' do
-        it 'adds timeliness percentage'
+        it 'adds timeliness percentage' do
+          @calificador = Calificador.new(@trabajo, Date.today + 1)
+          @calificador.send(:entrega_a_termino).must_equal @calificador.porcentajes[:entrega_a_termino]
+        end
       end
 
       describe 'when the delivery is not on time' do
-        it 'does not add anything for timeliness'
+        it 'does not add anything for timeliness' do
+          @calificador = Calificador.new(@trabajo, Date.today - 1)
+          @calificador.send(:entrega_a_termino).must_equal 0
+        end
       end
     end
 
