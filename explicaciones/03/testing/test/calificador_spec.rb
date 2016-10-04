@@ -118,17 +118,30 @@ describe Calificador do
   end
 
   describe 'Grading' do
+    before do
+      @trabajo.originalidad = 7
+      @trabajo.simplicidad = 3
+      @trabajo.prolijidad = 5
+      @calificador = Calificador.new(@trabajo)
+    end
+
     describe '#originalidad' do
-      it 'takes the value from the delivery, ranges it in 1..10 and multiplies that by the according percentage'
+      it 'takes the value from the delivery, ranges it in 1..10 and multiplies that by the according percentage' do
+        @calificador.send(:originalidad).must_equal 7
+      end
     end
 
     describe '#simplicidad' do
-      it 'takes the value from the delivery, ranges it in 1..10 and multiplies that by the according percentage'
+      it 'takes the value from the delivery, ranges it in 1..10 and multiplies that by the according percentage' do
+        @calificador.send(:simplicidad).must_equal 7.5
+      end
     end
 
     describe '#prolijidad' do
       describe 'when the delivery is tidy' do
-        it 'adds tidiness percentage'
+        it 'adds tidiness percentage' do
+          @calificador.send(:prolijidad).must_equal 15
+        end
       end
 
       describe 'when the delivery is not tidy' do
