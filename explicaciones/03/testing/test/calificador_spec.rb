@@ -137,14 +137,25 @@ describe Calificador do
     end
 
     describe '#entrega_a_termino' do
+      before do
+        @trabajo = TrabajoFactory.build
+      end
+
       describe 'when the delivery is on time' do
-        it 'adds timeliness percentage'
+        it 'adds timeliness percentage' do
+          @calificador = Calificador.new(@trabajo, Date.today + 1)
+          @calificador.send(:entrega_a_termino).must_equal @calificador.porcentajes[:entrega_a_termino]
+        end
       end
 
       describe 'when the delivery is not on time' do
-        it 'does not add anything for timeliness'
+        it 'does not add anything for timeliness' do
+          @calificador = Calificador.new(@trabajo, Date.today - 1)
+          @calificador.send(:entrega_a_termino).must_equal 0
+        end
       end
     end
+
 
     describe '#desarrollo' do
       describe 'when the development is acceptable or better' do
