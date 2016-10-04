@@ -147,7 +147,13 @@ describe Calificador do
       end
 
       describe 'when the delivery is not tidy' do
-        it 'does not add anything for tidiness'
+        before do
+          @trabajo = TrabajoFactory.build(prolijidad: 2)
+          @calificador = Calificador.new(@trabajo)
+        end
+        it 'does not add anything for tidiness' do
+          @calificador.send(:prolijidad).must_equal 0
+        end
       end
     end
 
@@ -197,11 +203,25 @@ describe Calificador do
 
     describe '#bonus_asistencia' do
       describe 'when the student has attended to at least half of the 10 classes' do
-        it 'adds attendance bonus percentage'
+        before do
+          @trabajo = TrabajoFactory.build(asistencia: 5)
+          @calificador = Calificador.new(@trabajo)
+        end
+        
+        it 'adds attendance bonus percentage' do
+          @calificador.send(:bonus_asistencia).must_equal @calificador.porcentajes[:bonus_asistencia]
+        end
       end
 
       describe 'when the student has attended to less than half of the 10 classes' do
-        it 'does not add anything for attendance bonus'
+        before do
+          @trabajo = TrabajoFactory.build(asistencia: 4)
+          @calificador = Calificador.new(@trabajo)
+        end
+        
+        it 'does not add anything for attendance bonus' do
+          @calificador.send(:bonus_asistencia).must_equal 0
+        end
       end
     end
   end
