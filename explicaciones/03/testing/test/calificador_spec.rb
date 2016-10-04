@@ -104,7 +104,9 @@ describe Calificador do
       @calificador.porcentajes.values.inject(0, &:+).must_equal 100
     end
 
-    it 'must include every possible mark part (originalidad, simplicidad, etc.)'
+    it 'must include every possible mark part (originalidad, simplicidad, etc.)'do
+      @calificador.porcentajes.keys.must_equal [:originalidad, :simplicidad, :prolijidad, :entrega_a_termino, :desarrollo, :bonus_asistencia]
+    end
   end
 
   describe '#porcentaje_aprobacion' do
@@ -155,7 +157,6 @@ describe Calificador do
         end
       end
     end
-
 
     describe '#desarrollo' do
       describe 'when the development is acceptable or better' do
