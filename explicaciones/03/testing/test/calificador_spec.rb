@@ -34,11 +34,63 @@ describe Calificador do
   end
 
   describe '#calificar' do
-    it 'grades according to the properties of the delivery'
 
-    it 'stores the final grade in the delivery'
+    before do
+      @fecha_limite = Date.new(2016, 10, 30)
+      @calificador = Calificador.new(@trabajo, @fecha_limite)
+    end
 
-    it 'grades in the 0..100 range'
+    describe 'when it is delivered early' do
+      it 'grades according to the properties of the delivery' do
+        temprano = (@fecha_limite - 1)
+        @trabajo_temprano = TrabajoFactory.build(fecha_entrega: temprano, originalidad: 5, simplicidad: 5, prolijidad: 5, desarrollo: 5, asistencia: 5)
+        @calificador = Calificador.new(@trabajo_temprano, @fecha_limite)
+        @calificador.calificar
+        @calificador.trabajo.nota.must_equal 82.5
+      end
+
+      it 'grades in the 0..100 range' do
+        @calificador.calificar
+        (0..100).must_include @calificador.trabajo.nota
+      end
+    end
+
+    describe 'when it is delivered just in time' do
+      it 'grades according to the properties of the delivery' do
+        @trabajo_dia_limite = TrabajoFactory.build(fecha_entrega: @fecha_limite, originalidad: 5, simplicidad: 5, prolijidad: 5, desarrollo: 5, asistencia: 5)
+        @calificador = Calificador.new(@trabajo_dia_limite, @fecha_limite)
+        @calificador.calificar
+        @calificador.trabajo.nota.must_equal 82.5
+      end
+
+      it 'grades in the 0..100 range' do
+        @calificador.calificar
+        (0..100).must_include @calificador.trabajo.nota
+      end
+    end
+
+    describe 'when it is delivered too late' do
+      it 'grades according to the properties of the delivery' do
+        tarde = (@fecha_limite + 1) 
+        @trabajo_tarde = TrabajoFactory.build(fecha_entrega: tarde, originalidad: 5, simplicidad: 5, prolijidad: 5, desarrollo: 5, asistencia: 5)
+        @calificador = Calificador.new(@trabajo_tarde, @fecha_limite)
+        @calificador.calificar
+        @calificador.trabajo.nota.must_equal 72.5 
+      end
+
+      it 'grades in the 0..100 range' do
+        @calificador.calificar
+        (0..100).must_include @calificador.trabajo.nota
+      end
+    end
+
+
+    it 'stores the final grade in the delivery' do
+      @calificador.calificar
+      @calificador.trabajo.nota.wont_be_nil
+      @calificador.trabajo.nota.must_be_kind_of(Numeric)
+    end
+
   end
 
   describe '#aprobado?' do
