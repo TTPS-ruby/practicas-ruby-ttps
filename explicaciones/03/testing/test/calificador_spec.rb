@@ -44,7 +44,6 @@ describe Calificador do
   describe '#aprobado?' do
     describe 'when the delivery has not been graded yet' do
       before do
-        @trabajo = TrabajoFactory.build
         @trabajo.nota = nil # This marks the delivery as not graded
         @calificador = Calificador.new(@trabajo)
       end
@@ -60,7 +59,6 @@ describe Calificador do
 
     describe 'when the delivery has already been graded' do
       before do
-        @trabajo = TrabajoFactory.build
         @trabajo.nota = 4 # This marks the delivery as already graded
         @calificador = Calificador.new(@trabajo)
       end
@@ -76,7 +74,6 @@ describe Calificador do
 
     describe 'when the mark is below #porcentaje_aprobacion' do
       before do
-        @trabajo = TrabajoFactory.build
         @calificador = Calificador.new(@trabajo)
         @trabajo.nota = @calificador.porcentaje_aprobacion / 2
       end
@@ -88,7 +85,6 @@ describe Calificador do
 
     describe 'when the mark is below #porcentaje_aprobacion' do
       before do
-        @trabajo = TrabajoFactory.build
         @calificador = Calificador.new(@trabajo)
         @trabajo.nota = @calificador.porcentaje_aprobacion * 2
       end
@@ -107,6 +103,8 @@ describe Calificador do
     it 'must add up to 100%' do
       @calificador.porcentajes.values.inject(0, &:+).must_equal 100
     end
+
+    it 'must include every possible mark part (originalidad, simplicidad, etc.)'
   end
 
   describe '#porcentaje_aprobacion' do
