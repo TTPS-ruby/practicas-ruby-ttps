@@ -42,7 +42,7 @@ describe Calificador do
 
     describe 'when it is delivered early' do
       it 'grades according to the properties of the delivery' do
-        temprano = (@fecha_limite - 1)
+        temprano = @fecha_limite - 1
         @trabajo_temprano = TrabajoFactory.build(fecha_entrega: temprano, originalidad: 5, simplicidad: 5, prolijidad: 5, desarrollo: 5, asistencia: 5)
         @calificador = Calificador.new(@trabajo_temprano, @fecha_limite)
         @calificador.calificar
@@ -71,7 +71,7 @@ describe Calificador do
 
     describe 'when it is delivered too late' do
       it 'grades according to the properties of the delivery' do
-        tarde = (@fecha_limite + 1) 
+        tarde = @fecha_limite + 1
         @trabajo_tarde = TrabajoFactory.build(fecha_entrega: tarde, originalidad: 5, simplicidad: 5, prolijidad: 5, desarrollo: 5, asistencia: 5)
         @calificador = Calificador.new(@trabajo_tarde, @fecha_limite)
         @calificador.calificar
@@ -86,6 +86,7 @@ describe Calificador do
 
 
     it 'stores the final grade in the delivery' do
+      @calificador.trabajo.nota.must_be_nil
       @calificador.calificar
       @calificador.trabajo.nota.wont_be_nil
       @calificador.trabajo.nota.must_be_kind_of(Numeric)
