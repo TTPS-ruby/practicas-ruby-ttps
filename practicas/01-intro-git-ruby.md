@@ -17,15 +17,15 @@ una terminal y analizar la salida:
 
 ```console
 $ git --version
-git version 2.9.2
+git version 2.14.1
 ```
 
 > En esta y todas las prácticas, cuando estemos hablando de ejecutar comandos en una terminal vamos a denotar las líneas
 > que tenés que ejecutar con un símbolo de prompt `$` si debés ejecutarlo con tu usuario o `#` si debés hacerlo con un
 > usuario con privilegios de administrador (típicamente referenciado como el usuario `root`).
 
-En el ejemplo anterior ejecutamos el comando `git --version` y obtuvimos la salida `git version 2.9.2`, lo cual indica
-que tenemos la versión `2.9.2` instalada y ya estamos listos para realizar los ejercicios de esta parte de la práctica.
+En el ejemplo anterior ejecutamos el comando `git --version` y obtuvimos la salida `git version 2.14.1`, lo cual indica
+que tenemos la versión `2.14.1` instalada y ya estamos listos para realizar los ejercicios de esta parte de la práctica.
 
 Si al ejecutarlo recibiste un mensaje de error indicando que el comando `git` no fue encontrado, eso quiere decir que
 Git no está instalado en tu computadora, y por ende debés instalarlo ejecutando el siguiente comando:
@@ -92,7 +92,7 @@ querramos: `git help`.
 ### Prerequisitos
 
 Antes de realizar los ejercicios de esta parte, necesitás tener instalada la última versión de Ruby en tu computadora.
-Al momento de publicar esta práctica la última versión estable de Ruby es la `2.3.1`, por lo que instalaremos esa
+Al momento de publicar esta práctica la última versión estable de Ruby es la `2.4.1`, por lo que instalaremos esa
 versión utilizando [Rbenv](https://github.com/sstephenson/rbenv#installation) y su _plugin_
 [ruby-build](https://github.com/sstephenson/ruby-build#installation). Rbenv permite usar distintas versiones de Ruby en
 nuestra computadora, y ruby-build es una extensión de Rbenv que simplifica la instalación de las versiones del lenguaje.
@@ -102,7 +102,7 @@ nuestra computadora, y ruby-build es una extensión de Rbenv que simplifica la i
 > lo que te recomendamos que leas los `README` de las dos herramientas que antes mencionamos para conocer más en
 > profundidad cómo funcionan.
 
-Ejecutá la siguiente secuencia de comandos para instalar Ruby 2.3.1 en tu computadora:
+Ejecutá la siguiente secuencia de comandos para instalar Ruby 2.4.1 en tu computadora:
 
 ```console
 # apt-get install -y autoconf bison build-essential lib{ssl,yaml,sqlite3}-dev libreadline6{,-dev} zlib1g{,-dev}
@@ -112,8 +112,8 @@ $ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-
 $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 $ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 $ source ~/.bashrc
-$ rbenv install 2.3.1
-$ rbenv global 2.3.1
+$ rbenv install 2.4.1
+$ rbenv global 2.4.1
 ```
 
 ### Ejercicios
