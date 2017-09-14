@@ -141,7 +141,7 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
 
   Por ejemplo:
 
-    ```ruby
+  ```ruby
     # Ejemplo de uso de Countable
     class Greeter
       # Incluyo el Mixin
@@ -174,11 +174,11 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
     # => 1
     b.invoked :hi
     # => 0
-    ```
+  ```
 
-    > Nota: para simplificar el ejercicio, asumí que los métodos a contabilizar no reciben parámetros.
+  > Nota: para simplificar el ejercicio, asumí que los métodos a contabilizar no reciben parámetros.
 
-    > Tips: investigá `Module#alias_method` y `Module#included`.
+  > Tips: investigá `Module#alias_method` y `Module#included`.
 
 12. Dada la siguiente clase _abstracta_ `GenericFactory`, implementá subclases de la misma que permitan la creación
     de instancias de dichas clases mediante el uso del método de clase `.create`, de manera tal que luego puedas usar
@@ -405,7 +405,5 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
 
     > Tip 1: Para este ejercicio es útil desactivar el `echo` de `irb` (si lo usás para probar el ejercicio). Para esto,
     > podés escribir en la consola:
-    > ```ruby
-    irb_context.echo = false
-    ```
+    > `irb_context.echo = false`
     > Tip 2: La solución es vaga.
