@@ -404,6 +404,6 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
     ```
 
     > Tip 1: Para este ejercicio es útil desactivar el `echo` de `irb` (si lo usás para probar el ejercicio). Para esto,
-    > podés escribir en la consola:
-    > `irb_context.echo = false`
+    > podés escribir en la consola: `irb_context.echo = false`.
+    
     > Tip 2: La solución es vaga.
