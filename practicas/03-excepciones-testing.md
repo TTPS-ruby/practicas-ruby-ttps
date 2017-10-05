@@ -65,8 +65,8 @@ principales clases de excepción, y a su vez introduce algunos ejercicios sobre 
    end
    ```
 
-6. Suponé que tenés el siguiente script escrito en Ruby y se te pide que lo hagas _resiliente_ (tolerante a fallos),
-   intentando siempre que se pueda recuperar la situación y volver a intentar la operación que falló. Agregá las
+6. Suponé que tenés el siguiente script y se te pide que lo hagas _resiliente_ (tolerante a fallos),
+   intentando siempre que se pueda recuperar la situación y volver a intentar la operación que falló. Realizá las
    modificaciones que consideres necesarias para lograr que el script sea más robusto.
 
    ```ruby
