@@ -207,17 +207,8 @@ principales clases de excepción, y a su vez introduce algunos ejercicios sobre 
     ```
 
 11. Implementá al menos 3 tests para cada uno de los siguientes ejercicios de las prácticas anteriores:
-  1. De la práctica 1:
-    * 4 (`en_palabras`)
-    * 5 (`contar`)
-    * 6 (`contar_palabras`)
-    * 9 (`longitud`)
-  2. De la práctica 2:
-    * 1 (`ordenar_arreglo`)
-    * 2 (`ordenar`)
-    * 4 (`longitud`)
-    * 14 (`opposite`)
-    * 16 (`da_nil?`)
+  1. De la práctica 1: 4 (`en_palabras`), 5 (`contar`), 6 (`contar_palabras`) y 9 (`longitud`).
+  2. De la práctica 2: 1 (`ordenar_arreglo`), 2 (`ordenar`), 4 (`longitud`), 14 (`opposite`) y 16 (`da_nil?`).
 
 12. Implementá los tests que consideres necesarios para probar el _Mixin_ `Countable` que desarrollaste en el ejercicio
     11 de la práctica 2, sin dejar de cubrir los siguientes puntos:
