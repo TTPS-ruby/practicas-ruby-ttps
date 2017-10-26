@@ -23,7 +23,7 @@ describe Calificador do
 
     describe 'when the limit date is omitted' do
       before do
-        @fecha_limite = Date.new(2017, 10, 30)
+        @fecha_limite = nil
         @calificador = Calificador.new(@trabajo, @fecha_limite)
       end
 
@@ -34,7 +34,6 @@ describe Calificador do
   end
 
   describe '#calificar' do
-
     before do
       @fecha_limite = Date.new(2017, 10, 30)
       @calificador = Calificador.new(@trabajo, @fecha_limite)
