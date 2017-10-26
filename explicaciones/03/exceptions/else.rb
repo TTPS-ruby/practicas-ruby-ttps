@@ -1,11 +1,10 @@
 begin
-  #raise 'a'
+  raise 'Oops'
 
-rescue SystemExit
-  puts 'no'
+rescue RuntimeError
+  puts $!.inspect
+  puts 'todo mal...'
 else
   puts $!.inspect
-  puts 'todo mal'
+  puts 'todo bien'
 end
-
-

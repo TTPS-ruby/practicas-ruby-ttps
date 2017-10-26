@@ -4,6 +4,8 @@
   * `replica.rb`
 * `throw`
   * `throw.rb`
+* `else`
+  * `else.rb`
 
 # Testing
 

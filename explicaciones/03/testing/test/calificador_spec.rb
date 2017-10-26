@@ -51,13 +51,13 @@ describe Calificador do
       @calificador.calificar
       (0..100).must_include @calificador.trabajo.nota
     end
-    
+
     describe 'when grades all have the maximum value and delivery is on time' do
       before do
         @trabajo = TrabajoFactory.build(fecha_entrega: @fecha_limite, originalidad: 10, simplicidad: 10, prolijidad: 10, desarrollo: 10, asistencia: 10)
         @calificador = Calificador.new(@trabajo, @fecha_limite)
       end
-      
+
       it 'assigns a final grade of 100' do
         @calificador.calificar
         @calificador.trabajo.nota.must_equal 100
@@ -69,7 +69,7 @@ describe Calificador do
         @trabajo = TrabajoFactory.build(fecha_entrega: @fecha_limite + 1, originalidad: 0, simplicidad: 0, prolijidad: 0, desarrollo: 0, asistencia: 0)
         @calificador = Calificador.new(@trabajo, @fecha_limite)
       end
-      
+
       it 'assigns a final grade of 0' do
         @calificador.calificar
         @calificador.trabajo.nota.must_equal 0
@@ -251,7 +251,7 @@ describe Calificador do
           @trabajo = TrabajoFactory.build(asistencia: 5)
           @calificador = Calificador.new(@trabajo)
         end
-        
+
         it 'adds attendance bonus percentage' do
           @calificador.send(:bonus_asistencia).must_equal @calificador.porcentajes[:bonus_asistencia]
         end
@@ -262,7 +262,7 @@ describe Calificador do
           @trabajo = TrabajoFactory.build(asistencia: 4)
           @calificador = Calificador.new(@trabajo)
         end
-        
+
         it 'does not add anything for attendance bonus' do
           @calificador.send(:bonus_asistencia).must_equal 0
         end
