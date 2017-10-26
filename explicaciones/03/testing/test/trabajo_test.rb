@@ -6,7 +6,7 @@ require 'trabajo'
 class TestTrabajo < Minitest::Test
   # #initialize
   def test_initialize_stores_values
-    fecha_entrega = Date.new(2016, 10, 3)
+    fecha_entrega = Date.new(2017, 10, 26)
     originalidad = 1
     simplicidad = 2
     prolijidad = 3
@@ -36,19 +36,19 @@ class TestTrabajo < Minitest::Test
 
   # #entregado_a_termino?
   def test_entregado_a_termino_si_anterior
-    fecha_entrega = Date.new(2016, 10, 3)
-    fecha_limite = Date.new(2016, 10, 10)
+    fecha_entrega = Date.new(2017, 10, 20)
+    fecha_limite = Date.new(2017, 10, 30)
     assert trabajo(fecha_entrega: fecha_entrega).entregado_a_termino?(fecha_limite)
   end
 
   def test_entregado_a_termino_si_el_mismo_dia
-    fecha_limite = fecha_entrega = Date.new(2016, 10, 3)
+    fecha_limite = fecha_entrega = Date.new(2017, 10, 26)
     assert trabajo(fecha_entrega: fecha_entrega).entregado_a_termino?(fecha_limite)
   end
 
   def test_entregado_a_termino_si_posterior
-    fecha_entrega = Date.new(2016, 10, 3)
-    fecha_limite = Date.new(2016, 10, 1)
+    fecha_entrega = Date.new(2017, 10, 26)
+    fecha_limite = Date.new(2017, 10, 24)
     refute trabajo(fecha_entrega: fecha_entrega).entregado_a_termino?(fecha_limite)
   end
 

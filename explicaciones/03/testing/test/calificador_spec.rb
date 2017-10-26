@@ -11,7 +11,7 @@ describe Calificador do
   describe '#initialize' do
     describe 'when every possible argument is provided' do
       before do
-        @fecha_limite = Date.new(2016, 10, 30)
+        @fecha_limite = Date.new(2017, 10, 30)
         @calificador = Calificador.new(@trabajo, @fecha_limite)
       end
 
@@ -23,7 +23,7 @@ describe Calificador do
 
     describe 'when the limit date is omitted' do
       before do
-        @fecha_limite = Date.new(2016, 10, 30)
+        @fecha_limite = Date.new(2017, 10, 30)
         @calificador = Calificador.new(@trabajo, @fecha_limite)
       end
 
@@ -36,7 +36,7 @@ describe Calificador do
   describe '#calificar' do
 
     before do
-      @fecha_limite = Date.new(2016, 10, 30)
+      @fecha_limite = Date.new(2017, 10, 30)
       @calificador = Calificador.new(@trabajo, @fecha_limite)
     end
 
