@@ -63,17 +63,17 @@ querramos: `git help`.
    
    >  Tip: `git log`.
 6. ¿Para qué se utilizan los siguientes subcomandos?
-  * `init`
-  * `status`
-  * `log`
-  * `fetch`
-  * `merge`
-  * `pull`
-  * `commit`
-  * `stash`
-  * `push`
-  * `rm`
-  * `checkout`
+    * `init`
+    * `status`
+    * `log`
+    * `fetch`
+    * `merge`
+    * `pull`
+    * `commit`
+    * `stash`
+    * `push`
+    * `rm`
+    * `checkout`
 7. Creá un archivo de texto en el repositorio que clonaste en el ejercicio **5** y verificá el estado de tu espacio de
    trabajo con el subcomando `status`. ¿En qué estado está el archivo que agregaste?
 8. Utilizá el subcomando `log` para ver los commits que se han hecho en el repositorio, tomá cualquiera de ellos y copiá
