@@ -40,6 +40,6 @@ Vagrant.configure(2) do |config|
       cd #{rbenv_path}/plugins/ruby-build && git pull origin master
     fi
     chown -R #{user}:#{user} #{rbenv_path}
-    sudo -i -H -u #{user} /bin/bash -lc 'RUBY_CONFIGURE_OPTS=--disable-install-doc #{rbenv_abs_path} install -s #{ruby_version} && #{rbenv_abs_path} global #{ruby_version} && #{gem_abs_path} update --system && #{gem_abs_path} install bundler'
+    sudo -i -H -u #{user} /bin/bash -lc 'RUBY_CONFIGURE_OPTS=--disable-install-doc #{rbenv_abs_path} install -s #{ruby_version} && #{rbenv_abs_path} global #{ruby_version} && #{gem_abs_path} update --system'
   SHELL
 end
