@@ -17,22 +17,25 @@ una terminal y analizar la salida:
 
 ```console
 $ git --version
-git version 2.14.1
+git version 2.17.1
 ```
 
 > En esta y todas las prácticas, cuando estemos hablando de ejecutar comandos en una terminal vamos a denotar las líneas
 > que tenés que ejecutar con un símbolo de prompt `$` si debés ejecutarlo con tu usuario o `#` si debés hacerlo con un
 > usuario con privilegios de administrador (típicamente referenciado como el usuario `root`).
 
-En el ejemplo anterior ejecutamos el comando `git --version` y obtuvimos la salida `git version 2.14.1`, lo cual indica
-que tenemos la versión `2.14.1` instalada y ya estamos listos para realizar los ejercicios de esta parte de la práctica.
+En el ejemplo anterior ejecutamos el comando `git --version` y obtuvimos la salida `git version 2.17.1`, lo cual indica
+que tenemos la versión `2.17.1` instalada y ya estamos listos para realizar los ejercicios de esta parte de la práctica.
 
 Si al ejecutarlo recibiste un mensaje de error indicando que el comando `git` no fue encontrado, eso quiere decir que
 Git no está instalado en tu computadora, y por ende debés instalarlo ejecutando el siguiente comando:
 
 ```console
-# apt-get update -qq && apt-get install -y git
+# apt update -qq && apt install -y git
 ```
+
+> Nota: el comando `apt` está disponible en versiones recientes de Ubuntu. Si al ejecutar esto obtenés un error por
+> comando desconocido, reemplazá `apt` por `apt-get` en los comandos anteriores.
 
 Una vez finalizada la instalación el comando `git` estará disponible para que lo uses.
 
@@ -60,17 +63,17 @@ querramos: `git help`.
    
    >  Tip: `git log`.
 6. ¿Para qué se utilizan los siguientes subcomandos?
-  1. `init`
-  2. `status`
-  3. `log`
-  4. `fetch`
-  5. `merge`
-  6. `pull`
-  7. `commit`
-  8. `stash`
-  9. `push`
-  10. `rm`
-  11. `checkout`
+  * `init`
+  * `status`
+  * `log`
+  * `fetch`
+  * `merge`
+  * `pull`
+  * `commit`
+  * `stash`
+  * `push`
+  * `rm`
+  * `checkout`
 7. Creá un archivo de texto en el repositorio que clonaste en el ejercicio **5** y verificá el estado de tu espacio de
    trabajo con el subcomando `status`. ¿En qué estado está el archivo que agregaste?
 8. Utilizá el subcomando `log` para ver los commits que se han hecho en el repositorio, tomá cualquiera de ellos y copiá
@@ -92,7 +95,7 @@ querramos: `git help`.
 ### Prerequisitos
 
 Antes de realizar los ejercicios de esta parte, necesitás tener instalada la última versión de Ruby en tu computadora.
-Al momento de publicar esta práctica la última versión estable de Ruby es la `2.4.1`, por lo que instalaremos esa
+Al momento de publicar esta práctica la última versión estable de Ruby es la `2.5.1`, por lo que instalaremos esa
 versión utilizando [Rbenv](https://github.com/sstephenson/rbenv#installation) y su _plugin_
 [ruby-build](https://github.com/sstephenson/ruby-build#installation). Rbenv permite usar distintas versiones de Ruby en
 nuestra computadora, y ruby-build es una extensión de Rbenv que simplifica la instalación de las versiones del lenguaje.
@@ -102,18 +105,18 @@ nuestra computadora, y ruby-build es una extensión de Rbenv que simplifica la i
 > lo que te recomendamos que leas los `README` de las dos herramientas que antes mencionamos para conocer más en
 > profundidad cómo funcionan.
 
-Ejecutá la siguiente secuencia de comandos para instalar Ruby 2.4.1 en tu computadora:
+Ejecutá la siguiente secuencia de comandos para instalar Ruby 2.5.1 en tu computadora:
 
 ```console
-# apt-get install -y autoconf bison build-essential lib{ssl,yaml,sqlite3}-dev libreadline6{,-dev} zlib1g{,-dev}
+# apt install -y autoconf bison build-essential lib{ssl,yaml,sqlite3}-dev libreadline6{,-dev} zlib1g{,-dev}
 $ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 $ cd ~/.rbenv && src/configure && make -C src
 $ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 $ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 $ source ~/.bashrc
-$ rbenv install 2.4.1
-$ rbenv global 2.4.1
+$ rbenv install 2.5.1
+$ rbenv global 2.5.1
 ```
 
 ### Ejercicios
