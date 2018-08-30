@@ -132,10 +132,10 @@ Es indistinto de qué forma instales y utilices Ruby, lo importante es que utili
 
 1. Investigá y probá en un intérprete de Ruby cómo crear objetos de los siguientes tipos básicos usando literales y
    usando el constructor `new` (cuando sea posible):
-  1. Arreglo (`Array`)
-  2. Diccionario o _hash_ (`Hash`)
-  3. String (`String`)
-  4. Símbolo (`Symbol`)
+   * Arreglo (`Array`)
+   * Diccionario o _hash_ (`Hash`)
+   * String (`String`)
+   * Símbolo (`Symbol`)
 
 2. ¿Qué devuelve la siguiente comparación? ¿Por qué?
 
@@ -198,10 +198,10 @@ Es indistinto de qué forma instales y utilices Ruby, lo importante es que utili
 
 7. Dada una cadena cualquiera, y utilizando los métodos que provee la clase `String`, realizá las siguientes
    operaciones sobre el `string`:
-  1. Imprimilo con sus caracteres en orden inverso.
-  2. Eliminá los espacios en blanco que contenga.
-  3. Convertí cada uno de sus caracteres por su correspondiente valor ASCII.
-  4. Cambiá las vocales por números (`a` por `4`, `e` por `3`, `i` por `1`, `o` por `0`, `u` por `6`).
+   * Imprimilo con sus caracteres en orden inverso.
+   * Eliminá los espacios en blanco que contenga.
+   * Convertí cada uno de sus caracteres por su correspondiente valor ASCII.
+   * Cambiá las vocales por números (`a` por `4`, `e` por `3`, `i` por `1`, `o` por `0`, `u` por `6`).
 
 8. ¿Qué hace el siguiente código?
 
@@ -267,10 +267,10 @@ Es indistinto de qué forma instales y utilices Ruby, lo importante es que utili
     ```
 
 15. Investigá qué métodos provee Ruby para:
-  * Conocer la lista de métodos de una clase.
-  * Conocer la lista de métodos de instancia de una clase.
-  * Conocer las variables de instancia de una clase.
-  * Obtener la lista de ancestros (_superclases_) de una clase.
+   * Conocer la lista de métodos de una clase.
+   * Conocer la lista de métodos de instancia de una clase.
+   * Conocer las variables de instancia de una clase.
+   * Obtener la lista de ancestros (_superclases_) de una clase.
 
 16. Escribí una función que encuentre la suma de todos los números naturales múltiplos de `3` ó `5` menores que un
     número `tope` que reciba como parámetro.
