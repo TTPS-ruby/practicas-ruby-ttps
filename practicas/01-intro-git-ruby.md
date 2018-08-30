@@ -108,7 +108,7 @@ nuestra computadora, y ruby-build es una extensión de Rbenv que simplifica la i
 Ejecutá la siguiente secuencia de comandos para instalar Ruby 2.5.1 en tu computadora:
 
 ```console
-# apt install -y autoconf bison build-essential lib{ssl,yaml,sqlite3}-dev libreadline6{,-dev} zlib1g{,-dev}
+# apt install -y autoconf bison build-essential lib{ssl,yaml,sqlite3}-dev libreadline{7,-dev} zlib1g{,-dev}
 $ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 $ cd ~/.rbenv && src/configure && make -C src
 $ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
