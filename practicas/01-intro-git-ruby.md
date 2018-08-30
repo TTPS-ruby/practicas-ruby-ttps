@@ -216,7 +216,7 @@ Es indistinto de qué forma instales y utilices Ruby, lo importante es que utili
    Por ejemplo:
 
     ```ruby
-    longitud(['TTPS', 'Opción', 'Ruby', 'Cursada 2015'])
+    longitud(['TTPS', 'Opción', 'Ruby', 'Cursada 2018'])
     # => [4, 6, 4, 12]
     ```
 
@@ -232,8 +232,8 @@ Es indistinto de qué forma instales y utilices Ruby, lo importante es que utili
     [`ROT13`](https://es.wikipedia.org/wiki/ROT13). Por ejemplo:
 
     ```ruby
-    rot13("¡Bienvenidos a la cursada 2015 de TTPS Opción Ruby!")
-    # => "¡Ovrairavqbf n yn phefnqn 2015 qr GGCF Bcpvóa Ehol!"
+    rot13("¡Bienvenidos a la cursada 2018 de TTPS Opción Ruby!")
+    # => "¡Ovrairavqbf n yn phefnqn 2018 qr GGCF Bcpvóa Ehol!"
     ```
 
 12. Escribí una función más genérica, parecida a la del ejercicio anterior, que reciba como parámetro un `string` y un
@@ -241,8 +241,8 @@ Es indistinto de qué forma instales y utilices Ruby, lo importante es que utili
     ejemplo:
 
     ```ruby
-    rot("¡Bienvenidos a la cursada 2015 de TTPS Opción Ruby!", 13)
-    # => "¡Ovrairavqbf n yn phefnqn 2015 qr GGCF Bcpvóa Ehol!"
+    rot("¡Bienvenidos a la cursada 2018 de TTPS Opción Ruby!", 13)
+    # => "¡Ovrairavqbf n yn phefnqn 2018 qr GGCF Bcpvóa Ehol!"
     ```
 
 13. Escribí un _script_ en Ruby que le pida al usuario su nombre y lo utilice para saludarlo imprimiendo en pantalla
