@@ -7,7 +7,10 @@ virtual con Ruby 2.5.1 instalado para facilitar la realización de los ejercicio
 
 ## Prerequisitos
 
-Se debe tener Vagrant instalado en la máquina donde se va a crear la VM.
+Se deben tener instalados [Vagrant](https://vagrantup.com) y [Virtualbox](https://virtualbox.org) instalados en la
+máquina donde se va a crear la VM. Virtualbox es el software utilizado para correr las máquinas virtuales, mientras
+que Vagrant es el encargado de preparar las VMs según el manifesto de configuración `Vagrantfile` (incluido en el
+mismo directorio que este archivo `README`).
 
 ## Uso
 
