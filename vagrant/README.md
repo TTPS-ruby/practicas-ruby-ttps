@@ -1,9 +1,9 @@
-# VM con Ruby 2.4.1
+# VM con Ruby 2.5.1
 
 Este directorio contiene un archivo de configuración de [Vagrant](https://www.vagrantup.com) que genera una máquina
-virtual con Ruby 2.4.1 instalado para facilitar la realización de los ejercicios de las prácticas.
+virtual con Ruby 2.5.1 instalado para facilitar la realización de los ejercicios de las prácticas.
 
-> Nota: la versión de la imagen base utilizada de Ubuntu requiere utilizar Vagrant 1.8.5 o superior para funcionar.
+> Nota: la versión de la imagen base utilizada de Ubuntu requiere utilizar Vagrant 2.1 o superior para funcionar.
 
 ## Prerequisitos
 
