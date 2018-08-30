@@ -267,10 +267,10 @@ Es indistinto de qué forma instales y utilices Ruby, lo importante es que utili
     ```
 
 15. Investigá qué métodos provee Ruby para:
-  1. Conocer la lista de métodos de una clase.
-  2. Conocer la lista de métodos de instancia de una clase.
-  3. Conocer las variables de instancia de una clase.
-  4. Obtener la lista de ancestros (_superclases_) de una clase.
+  * Conocer la lista de métodos de una clase.
+  * Conocer la lista de métodos de instancia de una clase.
+  * Conocer las variables de instancia de una clase.
+  * Obtener la lista de ancestros (_superclases_) de una clase.
 
 16. Escribí una función que encuentre la suma de todos los números naturales múltiplos de `3` ó `5` menores que un
     número `tope` que reciba como parámetro.
