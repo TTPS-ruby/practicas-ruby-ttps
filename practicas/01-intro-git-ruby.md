@@ -119,6 +119,13 @@ $ rbenv install 2.5.1
 $ rbenv global 2.5.1
 ```
 
+Si no disponés de un equipo con GNU/Linux o no querés realizar la instalación en tu sistema operativo habitual,
+desde la cátedra hemos preparado un box de [Vagrant](https://vagrantup.com) para utilizar con [Virtualbox](https://virtualbox.org)
+que contiene una instalación lista (con los pasos mencionados antes) de Ruby 2.5.1 y git. Los pasos para poder instalar
+las dependencias y utilizarla están descriptos junto al manifesto `Vagrantfile`, que indica cómo preparar la máquina
+virtual, accesibles en el [repositorio de prácticas de la materia](https://github.com/TTPS-ruby/practicas-ruby-ttps/tree/master/vagrant).
+Es indistinto de qué forma instales y utilices Ruby, lo importante es que utilices una versión _relativamente_ reciente (2.4.x o posterior).
+
 ### Ejercicios
 
 > Nota: al realizar estos ejercicios no utilices las sentencias de control `while`, `for` ni `repeat`.
