@@ -54,3 +54,9 @@ Con la información que se procese, se necesitan obtener los siguientes valores:
 _Nota:_ Los valores "diarios" se entienden para cada día que esté presente en el archivo de datos, así como los "mensuales" son para cada mes presente en el archivo.
 
 Adicionalmente, tenés que implementar los tests de unidad con los casos necesarios para garantizar el correcto funcionamiento de todas las métricas que se te pide que implementes.
+
+- - -
+
+Para facilitar las pruebas, se provee un script generador de datos en el formato esperado (con la tasa de fallos aleatoria incluida) para que puedas generar archivos CSV para realizar las pruebas que necesites.
+
+El mismo está incluido en el subdirectorio `bin/` del [directorio donde está el archivo fuente de este enunciado](https://github.com/TTPS-ruby/practicas-ruby-ttps/tree/master/evaluaciones/2018/03) en el repositorio de prácticas de la materia, y contiene las instrucciones para utilizarlo en el mismo código.
