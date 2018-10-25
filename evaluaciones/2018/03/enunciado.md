@@ -51,7 +51,9 @@ Con la información que se procese, se necesitan obtener los siguientes valores:
 * Tasa de falla de los instrumentos de medición, por unidad. La tasa de falla es una proporción `fallas / mediciones_totales` por cada instrumento de medición (este valor se toma considerando todo el archivo procesado, sin cortes temporales).
 * El instrumento que más ha fallado en sus mediciones (basándose en la métrica anterior).
 
-> _Nota: Los valores "diarios" se entienden para cada día que esté presente en el archivo de datos, así como los "mensuales" son para cada mes presente en el archivo._
+> _Nota 1: Los valores "diarios" se entienden para cada día que esté presente en el archivo de datos, así como los "mensuales" son para cada mes presente en el archivo._
+
+> _Nota 2: los valores que indican falla de una medición no deben contarse para los promedios; es decir que si se tienen 50 mediciones de temperatura, de las cuales 5 tuvieron error, el total de mediciones a considerar para el promedio de temperatura será de 45._ 
 
 Adicionalmente, tenés que implementar los tests de unidad con los casos necesarios para garantizar el correcto funcionamiento de todas las métricas que se te pide que implementes.
 
