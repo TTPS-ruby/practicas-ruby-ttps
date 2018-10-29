@@ -87,4 +87,4 @@ La entrega deberá realizarse **de manera individual** mediante el curso de la m
 
 > _Además del análisis humano que realizaremos, todos los trabajos se compararán entre sí con métodos de análisis estático de código para encontrar si hay trabajos copiados entre sí, en cuyo caso se considerarán desaprobados todos los que se encuentren en esa situación._
 
-## Fecha límite para la entrega: **Viernes 9 de noviembre de 2018 a las 12:00hs** (al mediodía).
+## Fecha límite para la entrega: **Domingo 11 de noviembre de 2018 a las 23:55hs**.
