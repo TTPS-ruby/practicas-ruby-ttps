@@ -16,10 +16,11 @@ Implementá una API (basada en los principios [REST](https://en.wikipedia.org/wi
 La implementación debés realizarla utilizando Rack, Sinatra y un Gemfile para declarar las dependencias del proyecto.
 
 Algunas aclaraciones:
-* Toda la información que es maneje puede estar en memoria, ya que no se solicita persistencia de ninguna otra forma (bases de datos o archivos, por ejemplo). En caso de implementarse la persistencia, será considerada como puntaje extra sobre lo que el trabajo requiere para su aprobación.
+* Toda la información que es maneje puede estar en memoria, ya que no se solicita persistencia de ninguna otra forma (bases de datos o archivos, por ejemplo). Esto quiere decir que cada vez que se termine el proceso que corre el servidor de la aplicación Sinatra, los datos que se tengan se descartarán. En caso de implementarse la persistencia, será considerada como puntaje extra sobre lo que el trabajo requiere para su aprobación.
 * Es obligatorio que valides los parámetros recibidos para asegurarte que sean los esperados.
 * Los endpoints deben retornar respuestas HTTP con códigos acorde a lo ocurrido (podés ver en [httpstatus.es](https://httpstatuses.com) la referencia completa de estados posibles con sus descripciones): de éxito en caso de ejecución satisfactoria, de error en caso de que no se pueda realizar la operación solicitada, etc.
 * El formato de las respuestas debe ser JSON, y se debe responder indicando la cabecera `content-type` adecuada para ese tipo de contenidos.
+* El Gemfile del proyecto debe incluir todas las dependencias que el mismo posea para funcionar. No se considerará incluida una dependencia si debe ser instalada externamente con `gem install`.
 
 - - -
 
