@@ -28,4 +28,4 @@ La entrega deberá realizarse **de manera individual** mediante el curso de la m
 
 > _Tener en cuenta que el repositorio debe poder se accedido por cualquiera de los docentes de la cátedra._
 
-## Fecha límite para la entrega: **Domingo 1 de diciembre de 2018 a las 23:55hs**.
+## Fecha límite para la entrega: **Domingo 2 de diciembre de 2018 a las 23:55hs**.
