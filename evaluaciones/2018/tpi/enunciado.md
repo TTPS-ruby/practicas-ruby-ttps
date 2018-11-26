@@ -1,7 +1,7 @@
 # TTPS Opción Ruby 2018
 ## Trabajo Práctico Integrador
 
-Te contactaron para implementar el conjunto de servicios backend que alimentan una aplicación de preguntas y respuestas estilo foro y de muy buena gana aceptaste el desafío.
+Te contactaron para implementar el conjunto de servicios backend que alimentan una aplicación de preguntas y respuestas estilo foro y de muy buena gana aceptaste el desafío. Como sos un hábil desarrollador en Ruby on Rails, decidiste implementar la API utilizando ese framework, creando una aplicación nueva en [modo API](https://guides.rubyonrails.org/api_app.html).
 
 La aplicación pública (frontend) ya se encuentra desarrollada, por lo que el formato y la estructura de las respuestas que implementes para los servicios que se te solicitan deberán adecuarse a las respuestas esperadas por el frontend.
 
