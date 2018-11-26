@@ -26,10 +26,21 @@ La estructura visible de los modelos debe ser, mínimamente, la siguiente:
   * `username` (no puede repetirse)
   * `password` (debe almacenarse hasheada, no puede ser almacenada en plano)
   * `screen_name`
-  * `email`
+  * `email` (no puede repetirse)
+  * `score` (reputación dentro de la aplicación, valor numérico que se incrementa al preguntar y responder)
+  * `created_at`
+  * `updated_at`
 * `Question`
   * `title`
   * `description`
   * `status` (si está resuelta o no)
-  * `user_id` (referencia a quién realizó la pregunta)
+  * `user_id` (referencia a quién publicó la pregunta)
   * `answer_id` (referencia a la respuesta que se marcó como correcta, en caso de estar resuelta)
+  * `created_at`
+  * `updated_at`
+* `Answer`
+  * `question_id` (referencia a la pregunta que intenta responder)
+  * `content`
+  * `user_id` (referencia a quién publicó la respuesta)
+  * `created_at`
+  * `updated_at`
