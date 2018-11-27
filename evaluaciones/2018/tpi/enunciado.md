@@ -55,7 +55,10 @@ La estructura visible de los modelos básicos debe ser, mínimamente, la siguien
 
 - - -
 
-La entrega deberá realizarse **de manera individual** mediante el curso de la materia en [la plataforma de Cátedras](https://catedras.info.unlp.edu.ar/), en una tarea destinada a tal fin, y se hará incluyendo la URL de un repositorio git disponible on-line. En el repositorio se deberá incluir todo el código fuente necesario para el correcto funcionamiento de la aplicación Rails desarrollada, entre los que deberá estar presente un archivo `README` con indicaciones claras sobre cómo se puede poner en funcionamiento la aplicación, inicializar la base de datos de ser necesario, etc.
+Para la primera entrega será opcional la subida del proyecto al PaaS [Heroku](https://heroku.com), pero esto será obligatorio para quienes deban presentarse a la reentrega del TPI. A tal fin, se podrá utilizar el _tier_ gratuito de esa plataforma (detallado en [su página de precios](https://www.heroku.com/pricing)).
+
+La entrega deberá realizarse **de manera individual** mediante el curso de la materia en [la plataforma de Cátedras](https://catedras.info.unlp.edu.ar/), en una tarea destinada a tal fin, y se hará incluyendo la URL de un repositorio git disponible on-line y, en caso de haberse desplegado la API en Heroku, el link a la dirección pública de la aplicación Rails corriendo en Heroku. En el repositorio se deberá incluir todo el código fuente necesario para el correcto funcionamiento de la aplicación Rails desarrollada, entre los que deberá estar presente un archivo `README` con indicaciones claras sobre cómo se puede poner en funcionamiento la aplicación, inicializar la base de datos de ser necesario, etc.
+
 
 > _Tener en cuenta que el repositorio debe poder se accedido por cualquiera de los docentes de la cátedra._
 
