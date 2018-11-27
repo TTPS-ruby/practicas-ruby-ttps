@@ -29,7 +29,7 @@ Los servicios que tenés que implementar son los siguientes:
 | `POST /questions/:question_id/answers` | Crea una nueva respuesta asociada a la pregunta identificada por el parámetro `:question_id` con el parámetro `content` recibido en la petición. Al crearla, se registra que el usuario que realiza la petición (identificado por su token) es el que publicó la respuesta. Si la pregunta está resuelta, no se debe admitir la creación de más respuestas, retornando un código HTTP `422 Unprocessable entity`. | Sí |
 | `DELETE /questions/:question_id/answers/:id` | Borra la respuesta existente, identificada por el parámetro `:id` y asociada a la pregunta identificada por el parámetro `:question_id`. No se debe permitir el borrado si la respuesta está marcada como respuesta correcta de la pregunta, o si la petición no es realizada por el usuario que publicó la respuesta. | Sí |
 
-La estructura visible de los modelos debe ser, mínimamente, la siguiente:
+La estructura visible de los modelos básicos debe ser, mínimamente, la siguiente:
 
 * `User`
   * `username` (no puede repetirse)
@@ -53,3 +53,10 @@ La estructura visible de los modelos debe ser, mínimamente, la siguiente:
   * `user_id` (referencia a quién publicó la respuesta)
   * `created_at`
   * `updated_at`
+
+- - -
+
+La entrega deberá realizarse **de manera individual** mediante el curso de la materia en [la plataforma de Cátedras](https://catedras.info.unlp.edu.ar/), en una tarea destinada a tal fin, y se hará incluyendo la URL de un repositorio git disponible on-line. En el repositorio se deberá incluir todo el código fuente necesario para el correcto funcionamiento de la aplicación Rails desarrollada, entre los que deberá estar presente un archivo `README` con indicaciones claras sobre cómo se puede poner en funcionamiento la aplicación, inicializar la base de datos de ser necesario, etc.
+
+> _Tener en cuenta que el repositorio debe poder se accedido por cualquiera de los docentes de la cátedra._
+
