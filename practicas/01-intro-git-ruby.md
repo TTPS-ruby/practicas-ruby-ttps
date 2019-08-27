@@ -95,7 +95,7 @@ querramos: `git help`.
 ### Prerequisitos
 
 Antes de realizar los ejercicios de esta parte, necesitás tener instalada la última versión de Ruby en tu computadora.
-Al momento de publicar esta práctica la última versión estable de Ruby es la `2.5.1`, por lo que instalaremos esa
+Al momento de publicar esta práctica la última versión estable de Ruby es la `2.6.3`, por lo que instalaremos esa
 versión utilizando [Rbenv](https://github.com/sstephenson/rbenv#installation) y su _plugin_
 [ruby-build](https://github.com/sstephenson/ruby-build#installation). Rbenv permite usar distintas versiones de Ruby en
 nuestra computadora, y ruby-build es una extensión de Rbenv que simplifica la instalación de las versiones del lenguaje.
@@ -105,7 +105,7 @@ nuestra computadora, y ruby-build es una extensión de Rbenv que simplifica la i
 > lo que te recomendamos que leas los `README` de las dos herramientas que antes mencionamos para conocer más en
 > profundidad cómo funcionan.
 
-Ejecutá la siguiente secuencia de comandos para instalar Ruby 2.5.1 en tu computadora:
+Ejecutá la siguiente secuencia de comandos para instalar Ruby 2.6.3 en tu computadora:
 
 ```console
 # apt install -y autoconf bison build-essential lib{ssl,yaml,sqlite3}-dev libreadline{7,-dev} zlib1g{,-dev}
@@ -115,13 +115,13 @@ $ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-
 $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 $ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 $ source ~/.bashrc
-$ rbenv install 2.5.1
-$ rbenv global 2.5.1
+$ rbenv install 2.6.3
+$ rbenv global 2.6.3
 ```
 
 Si no disponés de un equipo con GNU/Linux o no querés realizar la instalación en tu sistema operativo habitual,
 desde la cátedra hemos preparado un box de [Vagrant](https://vagrantup.com) para utilizar con [Virtualbox](https://virtualbox.org)
-que contiene una instalación lista (con los pasos mencionados antes) de Ruby 2.5.1 y git. Los pasos para poder instalar
+que contiene una instalación lista (con los pasos mencionados antes) de Ruby 2.6.3 y git. Los pasos para poder instalar
 las dependencias y utilizarla están descriptos junto al manifesto `Vagrantfile`, que indica cómo preparar la máquina
 virtual, accesibles en el [repositorio de prácticas de la materia](https://github.com/TTPS-ruby/practicas-ruby-ttps/tree/master/vagrant).
 Es indistinto de qué forma instales y utilices Ruby, lo importante es que utilices una versión _relativamente_ reciente (2.4.x o posterior).
@@ -216,7 +216,7 @@ Es indistinto de qué forma instales y utilices Ruby, lo importante es que utili
    Por ejemplo:
 
     ```ruby
-    longitud(['TTPS', 'Opción', 'Ruby', 'Cursada 2018'])
+    longitud(['TTPS', 'Opción', 'Ruby', 'Cursada 2019'])
     # => [4, 6, 4, 12]
     ```
 
@@ -232,8 +232,8 @@ Es indistinto de qué forma instales y utilices Ruby, lo importante es que utili
     [`ROT13`](https://es.wikipedia.org/wiki/ROT13). Por ejemplo:
 
     ```ruby
-    rot13("¡Bienvenidos a la cursada 2018 de TTPS Opción Ruby!")
-    # => "¡Ovrairavqbf n yn phefnqn 2018 qr GGCF Bcpvóa Ehol!"
+    rot13("¡Bienvenidos a la cursada 2019 de TTPS Opción Ruby!")
+    # => "¡Ovrairavqbf n yn phefnqn 2019 qr GGCF Bcpvóa Ehol!"
     ```
 
 12. Escribí una función más genérica, parecida a la del ejercicio anterior, que reciba como parámetro un `string` y un
@@ -241,8 +241,8 @@ Es indistinto de qué forma instales y utilices Ruby, lo importante es que utili
     ejemplo:
 
     ```ruby
-    rot("¡Bienvenidos a la cursada 2018 de TTPS Opción Ruby!", 13)
-    # => "¡Ovrairavqbf n yn phefnqn 2018 qr GGCF Bcpvóa Ehol!"
+    rot("¡Bienvenidos a la cursada 2019 de TTPS Opción Ruby!", 13)
+    # => "¡Ovrairavqbf n yn phefnqn 2019 qr GGCF Bcpvóa Ehol!"
     ```
 
 13. Escribí un _script_ en Ruby que le pida al usuario su nombre y lo utilice para saludarlo imprimiendo en pantalla

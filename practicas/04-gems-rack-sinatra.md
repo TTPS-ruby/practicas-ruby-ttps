@@ -51,7 +51,26 @@ comenzaremos a utilizar la herramienta para desarrollo de aplicaciones web en Ru
   6. ¿Qué diferencia hay entre `bundle install` y `bundle update`?
   7. ¿Qué ocurrió al ejecutar `prueba_dos.rb` de las distintas formas enunciadas? ¿Por qué? ¿Cómo modificarías el
      archivo `prueba_dos.rb` para que funcione correctamente?
-8. Desarrollá una gema (llamada `MethodCounter`, por ejemplo) que empaquete toda la funcionalidad implementada en el ejercicio 4 de la práctica 2 (el módulo `Countable`).      La forma de usarla sería algo similar a esto:    ```ruby    require 'method_counter'    class MiClase      include MethodCounter::Countable      def hola        puts "Hola"      end      def chau        puts "Chau"      end      count_invocations_of :hola, :chau    end    ```
+8. Desarrollá una gema (llamada `MethodCounter`, por ejemplo) que empaquete toda la funcionalidad implementada en el ejercicio 4 de la práctica 2 (el módulo `Countable`).
+   La forma de usarla sería algo similar a esto:
+
+   ```ruby
+   require 'method_counter'
+   
+   class MiClase
+     include MethodCounter::Countable
+     
+     def hola
+       puts "Hola"
+     end
+     
+     def chau
+       puts "Chau"
+     end
+     
+     count_invocations_of :hola, :chau
+   end
+   ```
 
 ## Sinatra
 
