@@ -9,10 +9,12 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
 
 1. Implementá un método que reciba como parámetro un arreglo de números, los ordene y devuelva el resultado. Por
    ejemplo:
+
    ```ruby
    ordenar_arreglo([1, 4, 6, 2, 3, 0, 10])
    # => [0, 1, 2, 3, 4, 6, 10]
    ```
+
 2. Modificá el método anterior para que en lugar de recibir un arreglo como único parámetro, reciba todos los números
    como parámetros separados. Por ejemplo:
 
@@ -117,25 +119,25 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
      del lenguaje estás usando para poder realizar esto?
 
 9. ¿Qué diferencia hay entre el uso de `include` y `extend` a la hora de incorporar un módulo en una clase?
-  1. Si quisieras usar un módulo para agregar métodos de instancia a una clase, ¿qué forma usarías a la hora de
-     incluirlo en la clase?
-  2. Si en cambio quisieras usar un módulo para agregar métodos de clase, ¿qué forma usarías a la hora de incluir el
-     módulo en la clase?
+   1. Si quisieras usar un módulo para agregar métodos de instancia a una clase, ¿qué forma usarías a la hora de
+      incluirlo en la clase?
+   2. Si en cambio quisieras usar un módulo para agregar métodos de clase, ¿qué forma usarías a la hora de incluir el
+      módulo en la clase?
 
 10. Implementá el módulo `Reverso` para utilizar como _Mixin_ e incluilo en alguna clase para probarlo. `Reverso` debe
     contener los siguientes métodos:
-  1. `#di_tcejbo`: Imprime el `object_id` del receptor en espejo (en orden inverso).
-  2. `#ssalc`: Imprime el nombre de la clase del receptor en espejo.
+    1. `#di_tcejbo`: Imprime el `object_id` del receptor en espejo (en orden inverso).
+    2. `#ssalc`: Imprime el nombre de la clase del receptor en espejo.
 
 11. Implementá el Mixin `Countable` que te permita hacer que cualquier clase cuente la cantidad de veces que los
     métodos de instancia definidos en ella es invocado. Utilizalo en distintas clases, tanto desarrolladas por vos como
     clases de la librería standard de Ruby, y chequeá los resultados. El Mixin debe tener los siguientes métodos:
-  1. `count_invocations_of(sym)`: método de clase que al invocarse realiza las tareas necesarias para contabilizar las
-     invocaciones al método de instancia cuyo nombre es `sym` (un símbolo).
-  2. `invoked?(sym)`: método de instancia que devuelve un valor booleano indicando si el método llamado `sym` fue
-     invocado al menos una vez en la instancia receptora.
-  3. `invoked(sym)`: método de instancia que devuelve la cantidad de veces que el método identificado por `sym` fue
-     invocado en la instancia receptora.
+    1. `count_invocations_of(sym)`: método de clase que al invocarse realiza las tareas necesarias para contabilizar las
+       invocaciones al método de instancia cuyo nombre es `sym` (un símbolo).
+    2. `invoked?(sym)`: método de instancia que devuelve un valor booleano indicando si el método llamado `sym` fue
+       invocado al menos una vez en la instancia receptora.
+    3. `invoked(sym)`: método de instancia que devuelve la cantidad de veces que el método identificado por `sym` fue
+       invocado en la instancia receptora.
 
   Por ejemplo:
 
@@ -322,7 +324,6 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
     > Tip: Analizalo pensando en conjuntos grandes de datos.
 
 22. Extendé la clase `Array` con el método `randomly` que funcione de la siguiente manera:
-
     * Si recibe un bloque, debe invocar ese bloque con cada uno de los elementos del arreglo en orden aleatorio.
     * Si no recibe un bloque, debe devolver un enumerador que va arrojando, de a uno, los elementos del arreglo en orden
       aleatorio.
@@ -403,5 +404,5 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
 
     > Tip 1: Para este ejercicio es útil desactivar el `echo` de `irb` (si lo usás para probar el ejercicio). Para esto,
     > podés escribir en la consola: `irb_context.echo = false`.
-    
+
     > Tip 2: La solución es vaga.
