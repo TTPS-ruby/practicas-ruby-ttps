@@ -9,12 +9,10 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
 
 1. Implementá un método que reciba como parámetro un arreglo de números, los ordene y devuelva el resultado. Por
    ejemplo:
-
    ```ruby
    ordenar_arreglo([1, 4, 6, 2, 3, 0, 10])
    # => [0, 1, 2, 3, 4, 6, 10]
    ```
-
 2. Modificá el método anterior para que en lugar de recibir un arreglo como único parámetro, reciba todos los números
    como parámetros separados. Por ejemplo:
 
