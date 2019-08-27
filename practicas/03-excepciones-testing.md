@@ -8,23 +8,18 @@ principales clases de excepción, y a su vez introduce algunos ejercicios sobre 
 ## Excepciones
 
 1. Investigá la jerarquía de clases que presenta Ruby para las excepciones. ¿Para qué se utilizan las siguientes clases?
-  * `IOError`
-  * `NameError`
-  * `RuntimeError`
-  * `NotImplementedError`
-  * `StopIteration`
-  * `TypeError`
-  * `SystemExit`
-
+   * `IOError`
+   * `NameError`
+   * `RuntimeError`
+   * `NotImplementedError`
+   * `StopIteration`
+   * `TypeError`
+   * `SystemExit`
 2. ¿Cuál es la diferencia entre `raise` y `throw`? ¿Para qué usarías una u otra opción?
-
 3. ¿Para qué sirven `begin .. rescue .. else` y `ensure`? Pensá al menos 2 casos concretos en que usarías estas
    sentencias en un script Ruby.
-
 4. ¿Para qué sirve `retry`? ¿Cómo evitarías caer en un loop infinito al usarla?
-
 5. ¿Cuáles son las diferencias entre los siguientes métodos?
-
    ```ruby
    def opcion_1
      a = [1, nil, 3, nil, 5, nil, 7, nil, 9, nil]
@@ -64,7 +59,6 @@ principales clases de excepción, y a su vez introduce algunos ejercicios sobre 
      puts c.inspect
    end
    ```
-
 6. Suponé que tenés el siguiente script y se te pide que lo hagas _resiliente_ (tolerante a fallos),
    intentando siempre que se pueda recuperar la situación y volver a intentar la operación que falló. Realizá las
    modificaciones que consideres necesarias para lograr que el script sea más robusto.
@@ -90,12 +84,9 @@ principales clases de excepción, y a su vez introduce algunos ejercicios sobre 
    resultado = numeros.map { |x| x / (x - 1) }
    puts 'El resultado es: %s' % resultado.join(', ')
    ```
-
 7. Partiendo del script del inciso anterior, implementá una nueva clase de excepción que se utilizará para indicar que
    la entrada del usuario no es un valor numérico entero válido. ¿De qué clase de la jerarquía de `Exception` heredaría?
-
 8. Sea el siguiente código:
-
    ```ruby
    def fun3
      puts "Entrando a fun3"
@@ -143,15 +134,11 @@ principales clases de excepción, y a su vez introduce algunos ejercicios sobre 
      puts "Salida"
    end
    ```
-
-  1. Seguí el flujo de ejecución registrando la traza de impresiones que deja el programa y justificando paso a paso.
-
-  2. ¿Qué pasaría si se permuta, dentro de `fun3`, el manejador de excepciones para `RuntimeError` y el manejador de
-     excepciones genérico (el que tiene el rescue vacío)?
-
-  3. ¿La palabra reservada `retry` que función cumple? ¿Afectaría el funcionamiento del programa si se mueve la línea
-     `x = 0` dentro del segundo `begin` (inmediatamente antes de llamar a `fun1` con `x`)?
-
+   1. Seguí el flujo de ejecución registrando la traza de impresiones que deja el programa y justificando paso a paso.
+   2. ¿Qué pasaría si se permuta, dentro de `fun3`, el manejador de excepciones para `RuntimeError` y el manejador de
+      excepciones genérico (el que tiene el rescue vacío)?
+   3. ¿La palabra reservada `retry` que función cumple? ¿Afectaría el funcionamiento del programa si se mueve la línea
+      `x = 0` dentro del segundo `begin` (inmediatamente antes de llamar a `fun1` con `x`)?
 
 ## Testing
 
@@ -159,9 +146,7 @@ principales clases de excepción, y a su vez introduce algunos ejercicios sobre 
 
 9. ¿En qué consiste la metodología TDD? ¿En qué se diferencia con la forma tradicional de escribir código y luego
    realizar los tests?
-
 10. Dado los siguientes tests, escribí el método correspondiente (el que se invoca en cada uno) para hacer que pasen:
-
     ```ruby
     require 'minitest/autorun'
     require 'minitest/spec'
@@ -205,23 +190,19 @@ principales clases de excepción, y a su vez introduce algunos ejercicios sobre 
       end
     end
     ```
-
 11. Implementá al menos 3 tests para cada uno de los siguientes ejercicios de las prácticas anteriores:
-  1. De la práctica 1: 4 (`en_palabras`), 5 (`contar`), 6 (`contar_palabras`) y 9 (`longitud`).
-  2. De la práctica 2: 1 (`ordenar_arreglo`), 2 (`ordenar`), 4 (`longitud`), 14 (`opposite`) y 16 (`da_nil?`).
-
+    1. De la práctica 1: 4 (`en_palabras`), 5 (`contar`), 6 (`contar_palabras`) y 9 (`longitud`).
+    2. De la práctica 2: 1 (`ordenar_arreglo`), 2 (`ordenar`), 4 (`longitud`), 14 (`opposite`) y 16 (`da_nil?`).
 12. Implementá los tests que consideres necesarios para probar el _Mixin_ `Countable` que desarrollaste en el ejercicio
     11 de la práctica 2, sin dejar de cubrir los siguientes puntos:
-  * Testear en una clase existente
-  * Testear en una clase creada únicamente con el propósito de testear
-  * Testear qué ocurre antes de que se invoque el método del que se está contando las invocaciones
-  * Testear la inicialización correcta del _Mixin_
-  * Testear algún caso extremo que se te ocurra
-
+    * Testear en una clase existente
+    * Testear en una clase creada únicamente con el propósito de testear
+    * Testear qué ocurre antes de que se invoque el método del que se está contando las invocaciones
+    * Testear la inicialización correcta del _Mixin_
+    * Testear algún caso extremo que se te ocurra
 13. Suponé que tenés que desarrollar una función llamada 'expansor' la cual recibe un string (conformado únicamente con
     letras) y devuelve otro string donde cada letra aparezca tantas veces según su lugar en el abecedario.
     Un ejemplo simple sería:
-
     ```ruby
     expansor 'abcd'
     # => 'abbcccdddd'
@@ -270,5 +251,5 @@ principales clases de excepción, y a su vez introduce algunos ejercicios sobre 
     end
     ```
 
-  1. Completar la especificación de los casos de prueba.
-  2. Implementar la función `expansor` y verificar que todos los casos pasen.
+    1. Completar la especificación de los casos de prueba.
+    2. Implementar la función `expansor` y verificar que todos los casos pasen.
