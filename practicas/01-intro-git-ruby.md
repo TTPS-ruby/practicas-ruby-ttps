@@ -252,10 +252,10 @@ Es indistinto de qué forma instales y utilices Ruby, lo importante es que utili
     # => 16744448
     ```
 15. Investigá qué métodos provee Ruby para:
-   * Conocer la lista de métodos de una clase.
-   * Conocer la lista de métodos de instancia de una clase.
-   * Conocer las variables de instancia de una clase.
-   * Obtener la lista de ancestros (_superclases_) de una clase.
+    * Conocer la lista de métodos de una clase.
+    * Conocer la lista de métodos de instancia de una clase.
+    * Conocer las variables de instancia de una clase.
+    * Obtener la lista de ancestros (_superclases_) de una clase.
 16. Escribí una función que encuentre la suma de todos los números naturales múltiplos de `3` ó `5` menores que un
     número `tope` que reciba como parámetro.
 17. Cada nuevo término en la secuencia de Fibonacci es generado sumando los 2 términos anteriores. Los primeros 10
