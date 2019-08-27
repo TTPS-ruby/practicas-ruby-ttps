@@ -135,10 +135,10 @@ para facilitar el desarrollo ágil de aplicaciones web.
 2. Agregá a los modelos `Office` y `Employee` las validaciones necesarias para hacer que sus atributos cumplan las
    restricciones definidas para las columnas de la tabla que cada uno representa.
 3. Validadores personalizados:
-    1. ¿Cómo podés definir uno para tus modelos AR?
-    2. Implementá un validador que chequee que un string sea un número telefónico con un formato válido para la
-       Argentina.
-    3. Agregá el validador que definiste en el punto anterior a tu modelo `Office` para validar el campo `phone_number`.
+   1. ¿Cómo podés definir uno para tus modelos AR?
+   2. Implementá un validador que chequee que un string sea un número telefónico con un formato válido para la
+      Argentina.
+   3. Agregá el validador que definiste en el punto anterior a tu modelo `Office` para validar el campo `phone_number`.
 
 ## Internacionalización (i18n) y localización (l10n)
 
