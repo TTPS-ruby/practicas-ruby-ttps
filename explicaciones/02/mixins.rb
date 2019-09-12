@@ -43,28 +43,55 @@ require_relative 'guest'
 require_relative 'building'
 require_relative 'office'
 
+tato = tota = rectorado = oficina = empleado = nil
+
 def find_and_compare(v)
   v == v.class.find(v.id) ? '✓' : ''
 end
 
-puts "Al iniciar, el storage está vacío. Tiene #{ACME::Storage.types.count} tipos almacenados."
-puts "Entonces creamos y almacenamos algunos objetos..."
-tato = Person.new(1, 'Tato').store
-tota = Person.new(2, 'Tota').store
-rectorado = Building.new(1, 'Rectorado UNLP', 'Avenida 7 nro 776').store
-oficina = Office.new(10, 101, 1, rectorado).store
-empleado = Employee.new(3, 'Empleado del mes', nil, '1238/2', oficina).store
-puts "Luego, el storage tiene valores de los siguientes tipos: #{ACME::Storage.types.join(', ')}."
-puts "Podemos chequear si lo que ACME::Storage tiene en su store interno coincide con lo que guardamos en él:"
-puts "  - Tato: #{find_and_compare(tato)}"
-puts "  - Tota: #{find_and_compare(tota)}"
-puts "  - Rectorado: #{find_and_compare(rectorado)}"
-puts "  - Oficina: #{find_and_compare(oficina)}"
-puts "  - Empleado: #{find_and_compare(empleado)}"
+def section(&b)
+  puts ""
+  yield
+  print '> '
+  $stdin.gets
+end
 
-begin
-  no_existe = Person.find!(9)
-  puts "Si llegamos hasta acá, alguien guardó una persona con id = 9."
-rescue RuntimeError => e
-  puts "No hay una persona con id = 9, por eso obtuvimos una excepción que dice \"#{e.message}\"."
+section do
+  puts "Al iniciar, el storage está vacío. Tiene #{ACME::Storage.types.count} tipos almacenados."
+end
+
+section do
+  puts "Entonces creamos y almacenamos algunos objetos..."
+  tato = Person.new(1, 'Tato').store
+  puts "  - Tato"
+  tota = Person.new(2, 'Tota').store
+  puts "  - Tota"
+  rectorado = Building.new(1, 'Rectorado UNLP', 'Avenida 7 nro 776').store
+  puts "  - Rectorado"
+  oficina = Office.new(10, 101, 1, rectorado).store
+  puts "  - Oficina 101"
+  empleado = Employee.new(3, 'Empleado del mes', nil, '1238/2', oficina).store
+  puts "  - Empleado del mes"
+end
+
+section do
+  puts "Luego, el storage tiene valores de los siguientes tipos: #{ACME::Storage.types.join(', ')}."
+end
+
+section do
+  puts "Podemos chequear si lo que ACME::Storage tiene en su store interno coincide con lo que guardamos en él:"
+  puts "  - Tato: #{find_and_compare(tato)}"
+  puts "  - Tota: #{find_and_compare(tota)}"
+  puts "  - Rectorado: #{find_and_compare(rectorado)}"
+  puts "  - Oficina: #{find_and_compare(oficina)}"
+  puts "  - Empleado: #{find_and_compare(empleado)}"
+end
+
+section do
+  begin
+    no_existe = Person.find!(9)
+    puts "Si llegamos hasta acá, alguien guardó una persona con id = 9."
+  rescue RuntimeError => e
+    puts "No hay una persona con id = 9, por eso obtuvimos una excepción que dice \"#{e.message}\"."
+  end
 end
