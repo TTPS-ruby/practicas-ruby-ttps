@@ -139,46 +139,46 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
     3. `invoked(sym)`: método de instancia que devuelve la cantidad de veces que el método identificado por `sym` fue
        invocado en la instancia receptora.
 
-  Por ejemplo:
+    Por ejemplo:
 
-  ```ruby
-    # Ejemplo de uso de Countable
-    class Greeter
-      # Incluyo el Mixin
-      include Countable
+    ```ruby
+      # Ejemplo de uso de Countable
+      class Greeter
+        # Incluyo el Mixin
+        include Countable
 
-      def hi
-        puts 'Hey!'
+        def hi
+          puts 'Hey!'
+        end
+
+        def bye
+          puts 'See you!'
+        end
+
+        # Indico que quiero llevar la cuenta de veces que se invoca el método #hi
+        count_invocations_of :hi
       end
 
-      def bye
-        puts 'See you!'
-      end
+      a = Greeter.new
+      b = Greeter.new
 
-      # Indico que quiero llevar la cuenta de veces que se invoca el método #hi
-      count_invocations_of :hi
-    end
+      a.invoked? :hi
+      # => false
+      b.invoked? :hi
+      # => false
 
-    a = Greeter.new
-    b = Greeter.new
+      a.hi
+      # Imprime "Hey!"
 
-    a.invoked? :hi
-    # => false
-    b.invoked? :hi
-    # => false
+      a.invoked :hi
+      # => 1
+      b.invoked :hi
+      # => 0
+    ```
 
-    a.hi
-    # Imprime "Hey!"
+    > Nota: para simplificar el ejercicio, asumí que los métodos a contabilizar no reciben parámetros.
 
-    a.invoked :hi
-    # => 1
-    b.invoked :hi
-    # => 0
-  ```
-
-  > Nota: para simplificar el ejercicio, asumí que los métodos a contabilizar no reciben parámetros.
-
-  > Tips: investigá `Module#alias_method` y `Module#included`.
+    > Tips: investigá `Module#alias_method` y `Module#included`.
 
 12. Dada la siguiente clase _abstracta_ `GenericFactory`, implementá subclases de la misma que permitan la creación
     de instancias de dichas clases mediante el uso del método de clase `.create`, de manera tal que luego puedas usar
@@ -261,19 +261,19 @@ los elementos fundamentales del mismo: los métodos, las clases y los módulos, 
     end
     ```
 
-  1. ¿Qué imprimen cada una de las siguientes sentencias? ¿De dónde está obteniendo el valor?
-     1. `puts A.value`
-     2. `puts A::B.value`
-     3. `puts C::D.value`
-     4. `puts C::E.value`
-     5. `puts F.value`
-  2. ¿Qué pasaría si ejecutases las siguientes sentencias? ¿Por qué?
-     1. `puts A::value`
-     2. `puts A.new.value`
-     3. `puts B.value`
-     4. `puts C::D.value`
-     5. `puts C.value`
-     6. `puts F.superclass.value`
+    1. ¿Qué imprimen cada una de las siguientes sentencias? ¿De dónde está obteniendo el valor?
+       1. `puts A.value`
+       2. `puts A::B.value`
+       3. `puts C::D.value`
+       4. `puts C::E.value`
+       5. `puts F.value`
+    2. ¿Qué pasaría si ejecutases las siguientes sentencias? ¿Por qué?
+       1. `puts A::value`
+       2. `puts A.new.value`
+       3. `puts B.value`
+       4. `puts C::D.value`
+       5. `puts C.value`
+       6. `puts F.superclass.value`
 
 ## Bloques
 
