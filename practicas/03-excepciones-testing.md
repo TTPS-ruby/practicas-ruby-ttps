@@ -15,6 +15,7 @@ principales clases de excepción, y a su vez introduce algunos ejercicios sobre 
    * `StopIteration`
    * `TypeError`
    * `SystemExit`
+   * `SystemStackError`
    * `ZeroDivisionError`
    * `StandardError`
    * `ArgumentError`
