@@ -15,6 +15,9 @@ principales clases de excepción, y a su vez introduce algunos ejercicios sobre 
    * `StopIteration`
    * `TypeError`
    * `SystemExit`
+   * `ZeroDivisionError`
+   * `StandardError`
+   * `ArgumentError`
 2. ¿Cuál es la diferencia entre `raise` y `throw`? ¿Para qué usarías una u otra opción?
 3. ¿Para qué sirven `begin .. rescue .. else` y `ensure`? Pensá al menos 2 casos concretos en que usarías estas
    sentencias en un script Ruby.
@@ -119,7 +122,7 @@ principales clases de excepción, y a su vez introduce algunos ejercicios sobre 
      puts "Ejecutando ensure de fun1"
    end
 
-   begin  
+   begin
      x = 0
      begin
        fun1 x
@@ -134,11 +137,12 @@ principales clases de excepción, y a su vez introduce algunos ejercicios sobre 
      puts "Salida"
    end
    ```
-   1. Seguí el flujo de ejecución registrando la traza de impresiones que deja el programa y justificando paso a paso.
+   1. Seguí el flujo de ejecución registrando la traza de impresiones que deja el programa, analizando por qué partes
+      del código va pasando y justificando esos pasos.
    2. ¿Qué pasaría si se permuta, dentro de `fun3`, el manejador de excepciones para `RuntimeError` y el manejador de
       excepciones genérico (el que tiene el rescue vacío)?
-   3. ¿La palabra reservada `retry` que función cumple? ¿Afectaría el funcionamiento del programa si se mueve la línea
-      `x = 0` dentro del segundo `begin` (inmediatamente antes de llamar a `fun1` con `x`)?
+   3. ¿El uso de `retry` afectaría el funcionamiento del programa si se mueve la línea `x = 0` dentro del segundo
+      `begin` (inmediatamente antes de llamar a `fun1` con `x`)?
 
 ## Testing
 
@@ -253,3 +257,4 @@ principales clases de excepción, y a su vez introduce algunos ejercicios sobre 
 
     1. Completar la especificación de los casos de prueba.
     2. Implementar la función `expansor` y verificar que todos los casos pasen.
+
