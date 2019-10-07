@@ -1,0 +1,15 @@
+Queremos implementar un REPL simple para evaluar código Ruby.
+
+Un REPL funciona como un bucle en que:
+
+1. se lee la entrada del usuario,
+2. se evalúa esa entrada,
+3. se imprime el resultado de la evaluación, y
+4. se vuelve al paso 1.
+
+En caso que ocurran errores, el REPL debería informarlos y seguir funcionando (al menos en la mayoría de los casos).
+
+Para simplificar su implementación, queda fuera del alcance de nuestro REPL la evaluación de sentencias multilínea.
+
+Nuestro REPL debe guardar un registro (pensar en un `history` de la terminal) de los comandos ejecutados, persistente entre ejecuciones del REPL. Ese registro debe poder consultarse escribiendo `history` o simplemente `h`, y se debe brindar una ayuda de los comandos disponibles si se igresa `help`.
+
