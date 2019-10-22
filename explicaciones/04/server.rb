@@ -2,6 +2,8 @@ require 'sinatra'
 require_relative 'day_checker'
 require_relative 'smiley'
 
+set :public_folder, 'public'
+
 # Utilizar middleware Smiley
 use Smiley
 
