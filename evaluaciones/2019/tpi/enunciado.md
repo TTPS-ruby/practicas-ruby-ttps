@@ -229,7 +229,7 @@ La estructura de la base de datos debés definirla mediante el uso de [migracion
 
 Podés utilizar las gemas que consideres necesarias para asistirte en la implementación de la funcionalidad solicitada en este enunciado, siempre y cuando definas claramente las restricciones de versiones adecuadas sobre las mismas.
 
-La versión de Ruby a utilizar debe estar en la rama estable del lenguaje (actualmente `2.6`).
+La versión de Ruby a utilizar debe estar en la rama estable del lenguaje.
 
 Para los tests de unidad pueden utilizarse las librerías vistas en la materia: `minitest` (en modalidad clásica o _spec_) o `rspec`.
 
