@@ -203,7 +203,7 @@ Retorna la información de la venta identificada por el parámetro `id`, siempre
 
 Crea una nueva venta con los atributos que se reciben como parámetros en el cuerpo de la petición (respetando lo definido por el estándar JSON:API para la estructura de las peticiones), incluyendo los productos y cantidades de éstos que se solicitan para la venta.
 
-En caso de encontrarse algún error de validación, no deberá crearse la venta y la respuesta de la API deberá contener el detalle de los errores encontrados, respondiendo con un HTTP status adecuado. Por el contrario, en caso de éxito, retorna los datos de la venta generada.
+En caso de encontrarse algún error de validación, no deberá crearse la venta y la respuesta de la API deberá contener el detalle de los errores encontrados, respondiendo con un HTTP status adecuado. Por el contrario, en caso de éxito, retorna los datos de la venta.
 
 ## Sobre el uso de JSON:API
 
