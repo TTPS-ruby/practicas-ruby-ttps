@@ -1,6 +1,6 @@
-# TTPS Opción Ruby 2019
+**TTPS Opción Ruby 2019**
 
-## Trabajo Práctico Integrador
+# Trabajo Práctico Integrador
 
 Se te ha solicitado implementar un conjunto de servicios backend para dar soporte al frontend de una aplicación de gestión de inventario y ventas de un negocio local.
 
