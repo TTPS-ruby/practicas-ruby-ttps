@@ -175,7 +175,7 @@ Retorna todas las reservas que aún no se han convertido en ventas. Para cada re
 
 Retorna la información de la reserva identificada por el parámetro `id`.
 
-En caso de solicitarse la inclusión de los ítems asociados a la venta mediante un *compound document*, la respuesta deberá incluir también dichos elementos (siempre siguiendo lo definido para estos casos en el estándar JSON:API). De la misma forma, se podrá pedir la inclusión de la venta asociada como un *compound document*.
+En caso de solicitarse la inclusión de los ítems asociados a la reserva mediante un *compound document*, la respuesta deberá incluir también dichos elementos (siempre siguiendo lo definido para estos casos en el estándar JSON:API). De la misma forma, se podrá pedir la inclusión de la venta asociada como un *compound document*.
 
 #### `POST /reservas`
 
