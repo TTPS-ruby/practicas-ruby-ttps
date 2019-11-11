@@ -163,9 +163,7 @@ En caso de no existir el producto solicitado, se deberá devolver un HTTP status
 
 #### `POST /productos/:codigo/items`
 
-Crea ítems para el producto identificado por el código recibido en el parámetro `codigo`. En el cuerpo de la petición se recibe la cantidad de ítems a crear, que debe ser mayor que cero.
-
-Los ítems creados se generan en estado *disponible*.
+Crea ítems para el producto identificado por el código recibido en el parámetro `codigo`. En el cuerpo de la petición se recibe la cantidad de ítems a crear, que debe ser mayor que cero. Los ítems creados se generan en estado *disponible*.
 
 #### `GET /reservas`
 
@@ -193,7 +191,7 @@ Borra una reserva existente, volviendo sus ítems asociados al estado *disponibl
 
 #### `GET /ventas`
 
-Retorna todas las ventas realizadas por el usuario que envía la petición. Para cada venta retornada se debe incluir únicamente la fecha de venta, el nombre o razón social del cliente, y el monto total de la venta (basado en la suma de los valores de venta de los ítems asociados).
+Retorna todas las ventas realizadas por el usuario que envía la petición. Para cada venta retornada se debe incluir únicamente la fecha de venta, el nombre o razón social del cliente, y el monto total de la venta (basado en la suma de los valores de venta de sus ítems).
 
 #### `GET /ventas/:id`
 
