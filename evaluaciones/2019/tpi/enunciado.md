@@ -161,6 +161,12 @@ Retorna todos los items asociados al producto identificado por el código recibi
 
 En caso de no existir el producto solicitado, se deberá devolver un HTTP status `404 Not found`.
 
+#### `POST /productos/:codigo/items`
+
+Crea ítems para el producto identificado por el código recibido en el parámetro `codigo`. En el cuerpo de la petición se recibe la cantidad de ítems a crear, que debe ser mayor que cero.
+
+Los ítems creados se generan en estado *disponible*.
+
 #### `GET /reservas`
 
 Retorna todas las reservas que aún no se han convertido en ventas. Para cada reserva retornada se debe incluir únicamente la fecha de reserva, el nombre o razón social del cliente, y el monto total de la reserva (basado en el monto unitario de los productos).
